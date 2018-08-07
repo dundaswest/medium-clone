@@ -1,4 +1,5 @@
 import React from 'react';
+import yedom from '../Yedam.jpg';
 
 class Author extends React.Component {
   constructor(props) {
@@ -7,8 +8,14 @@ class Author extends React.Component {
 
   render() {
     return (
-      <div>
-        hi
+      <div className="Author">
+        <img src= {yedom}  className="authorPic" />
+        <div className="authorName">
+          Yedam hihihi
+        </div>
+        <div className="clear"></div>
+        <span className="follow">Follow</span>
+        <div className="clear"></div>
       </div>
     );
   }
