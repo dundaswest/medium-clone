@@ -1,15 +1,24 @@
 import React from 'react';
+import Header from './Header';
+import Author from './Author';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
-    state: {
+    {
     }
   }
 
   render() {
     return (
-      <div> hi </div>
+      <div>
+
+
+        <div className="Header">
+          <Header />
+          <Author />
+        </div>
+      </div>
     );
   }
 }

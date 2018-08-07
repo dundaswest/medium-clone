@@ -23,6 +23,14 @@ module.exports = {
         },
       },
       {
+        test: /\.(pdf|jpg|png|gif|svg|ico)$/,
+        use: [
+          {
+            loader: 'url-loader',
+          },
+        ],
+      },
+      {
         test: /\.jsx?$/,
         exclude: /node_modules/,
         use: ['babel-loader', 'eslint-loader'],
@@ -51,7 +59,5 @@ module.exports = {
       filename: '[name].css',
     }),
   ],
+
 };
-
-
-
