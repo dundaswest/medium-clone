@@ -11,7 +11,7 @@ class Author extends React.Component {
       <div className="Author">
         <img src= {yedom}  className="authorPic" />
         <div className="authorName">
-          Yedam hihihi
+          Yedam Rachmaninoff
         </div>
         <div className="clear"></div>
         <span className="follow">Follow</span>

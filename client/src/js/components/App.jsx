@@ -1,6 +1,9 @@
 import React from 'react';
 import Header from './Header';
 import Author from './Author';
+import Article from './Article';
+import SideBar from './Sidebar';
+import Footer from './Footer';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,7 +19,10 @@ class App extends React.Component {
 
         <div className="Header">
           <Header />
+          <SideBar />
           <Author />
+          <Article />
+          <Footer />
         </div>
       </div>
     );

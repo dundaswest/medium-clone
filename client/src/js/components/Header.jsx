@@ -14,6 +14,7 @@ class Header extends React.Component {
       <div className="clear"></div>
       <div >
         <span className="sign-in">Sign in /Sign up</span>
+        <div className="clear"></div>
       </div>
       </div>
     )
