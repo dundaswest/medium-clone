@@ -13,6 +13,12 @@ module.exports = {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
+  devServer: {
+    publicPath: '/public/',
+  },
+  stats: {
+    reasons: true,
+  },
   module: {
     rules: [
       {
@@ -51,6 +57,7 @@ module.exports = {
     ],
   },
   plugins: [
+
     new HtmlWebpackPlugin({
       template: path.join(srcFolder, '/index.html'),
       filename: './index.html',

@@ -6,8 +6,6 @@
     "node": true,
     "es6": true
   },
-  "rules": {
-    "react/prop-types": [2]
-  },
+  "rules": {"react/prop-types": [2]},
   "extends": ["airbnb"]
 }
