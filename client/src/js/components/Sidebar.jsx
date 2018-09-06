@@ -3,6 +3,7 @@ import clap from '../clap.svg';
 import twitter from '../twitter.svg';
 import bookmark from '../bookmark-white.svg';
 import facebook from '../facebook.svg';
+import store from '../redux/store/store';
 /*
 class Sidebar extends React.Component {
   constructor(props) {

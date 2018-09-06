@@ -6,6 +6,7 @@ import Article from './Article';
 import Sidebar from '../redux/containers/Clap';
 import Footer from './Footer';
 
+
 /*
 class App extends React.Component {
   constructor(props) {
