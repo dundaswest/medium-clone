@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "webpack -d --watch --display-error-details",
-    "start": "nodemon server/index.js"
+    "start": "nodemon server/index.js",
+    "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\""
   },
   "author": "Jamie",
   "license": "ISC",
@@ -31,6 +32,7 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "babel-plugin-styled-components": "^1.6.3",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "faker": "^4.1.0",
@@ -53,6 +55,7 @@
     "redux-devtools-extension": "^2.13.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "styled-components": "^3.4.5",
     "url-loader": "^1.0.1"
   }
 }

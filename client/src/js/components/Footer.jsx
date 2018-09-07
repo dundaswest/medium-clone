@@ -9,23 +9,18 @@ class Footer extends React.Component {
   render() {
     return (
       <div className="footerDiv">
-        <img src={yedom} id="footerImg"/>
+        <img src={yedom} id="footerImg" />
         <div id="footerTxt">
-        <div id="written">
-        written by
-        </div>
+          <div id="written">written by</div>
 
-        <div id="authorName-footer">
-          Yedam Rachmaninoff
+          <div id="authorName-footer">Yedam Rachmaninoff</div>
+          <div>
+            Philosophy, Literature, Food, Computer Science. Questions are underrated. Likes complexity but not that kind
+            of complexity.
+          </div>
+          <div className="followBtn">follow</div>
         </div>
-        <div>
-        Philosophy, Literature, Food, Computer Science. Questions are underrated. Likes complexity but not that kind of complexity.
-          </div>
-        <div className="followBtn">
-            follow
-          </div>
-          </div>
-          <div className="clear"></div>
+        <div className="clear" />
       </div>
     );
   }
