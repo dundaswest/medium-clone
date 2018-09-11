@@ -1,4 +1,3 @@
-
 const express = require('express');
 const pg = require('pg');
 
@@ -27,9 +26,5 @@ app.get('/user/:id', (req, res) => {
     }
   });
 });
-
-
-
-
 
 app.listen(3000, () => console.log('Example app listening on port 3000!'));

@@ -1,10 +1,10 @@
-import React from "react";
-import clap from "../clap.svg";
-import twitter from "../twitter.svg";
-import bookmark from "../bookmark-white.svg";
-import facebook from "../facebook.svg";
-import { number } from "prop-types";
-import store from "../redux/store/store";
+import React from 'react';
+import clap from '../clap.svg';
+import twitter from '../twitter.svg';
+import bookmark from '../bookmark-white.svg';
+import facebook from '../facebook.svg';
+import { number } from 'prop-types';
+import store from '../redux/store/store';
 /*
 class Sidebar extends React.Component {
   constructor(props) {
@@ -13,21 +13,21 @@ class Sidebar extends React.Component {
 
   render() {
     return (
-      <div className="sideBar">
+      <div className='sideBar'>
         <div>
-          <div id="clapNum">
+          <div id='clapNum'>
             300
           </div>
-        <img src={clap} id="clap" />
+        <img src={clap} id='clap' />
         </div>
         <div>
-        <img src={twitter} id="twitter" />
+        <img src={twitter} id='twitter' />
         </div>
         <div>
-        <img src={bookmark} id="bookmark" />
+        <img src={bookmark} id='bookmark' />
         </div>
         <div>
-        <img src={facebook} id="facebook" />
+        <img src={facebook} id='facebook' />
         </div>
 
       </div>
@@ -36,19 +36,19 @@ class Sidebar extends React.Component {
 }
 */
 const Sidebar = ({ clap_num, onClick }) => (
-  <div className="sideBar">
+  <div className='sideBar'>
     <div>
-      <div id="clapNum">{clap_num}</div>
-      <img src={clap} id="clap" onClick={onClick} />
+      <div id='clapNum'>{clap_num}</div>
+      <img src={clap} id='clap' onClick={onClick} />
     </div>
     <div>
-      <img src={twitter} id="twitter" />
+      <img src={twitter} id='twitter' />
     </div>
     <div>
-      <img src={bookmark} id="bookmark" />
+      <img src={bookmark} id='bookmark' />
     </div>
     <div>
-      <img src={facebook} id="facebook" />
+      <img src={facebook} id='facebook' />
     </div>
   </div>
 );
