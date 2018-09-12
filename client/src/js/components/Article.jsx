@@ -9,10 +9,12 @@ class Author extends React.Component {
   render() {
     return (
       <div>
-        <div className="ArticleTitle">How to Sing like yedam</div>
+        <div className="ArticleTitle">
+How to Sing like yedam
+        </div>
         <Text />
       </div>
-    )
+    );
   }
 }
 
