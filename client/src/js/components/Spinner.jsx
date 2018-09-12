@@ -3,7 +3,7 @@ import styled, { keyframes } from 'styled-components';
 
 const path = require('path');
 
-const logo = path.join(__dirname, 'Yedam.jpg');
+const logo = path.join(__dirname, 'client/src/js/Yedam.jpg');
 const spin = keyframes`
 from
 {

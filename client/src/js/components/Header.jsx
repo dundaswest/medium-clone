@@ -8,7 +8,7 @@ const Wrapper = styled.div`
   padding: 4em;
   background: #c7efcf;
 `;
-
+/*
 class Header extends React.Component {
   constructor(props) {
     super(props);
@@ -35,5 +35,23 @@ Sign in /Sign up
     );
   }
 }
-
+*/
+const Header = () => (
+  <Wrapper>
+    <div className="header">
+      <img src={logo} alt="Medium logo" className="mLogo" />
+      <Spinner />
+      <div className="header-title">
+Stories
+      </div>
+      <div className="clear" />
+      <div>
+        <span className="sign-in">
+Sign in /Sign up
+        </span>
+        <div className="clear" />
+      </div>
+    </div>
+  </Wrapper>
+);
 export default Header;
