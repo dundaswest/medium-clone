@@ -3,7 +3,8 @@ import styled, { keyframes } from 'styled-components';
 
 const path = require('path');
 
-const logo = path.join(__dirname, 'client/src/js/Yedam.jpg');
+const logo = '../logo.svg';
+// const logo = '../public/logo.svg';
 const spin = keyframes`
 from
 {
@@ -22,6 +23,6 @@ const Image = styled.img`
   margin-right: 20px;
 `;
 
-const Spinner = () => <Image src="../client/src/js/Yedam.jpg" alt="loading indicator" />;
+const Spinner = () => <Image src={logo} />;
 
 export default Spinner;

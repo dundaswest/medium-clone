@@ -1,9 +1,11 @@
 const express = require('express');
 const pg = require('pg');
+const cors = require('cors');
 
 const app = express();
 const session = require('express-session');
 
+app.use(cors());
 app.use(express.static('public'));
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
