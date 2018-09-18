@@ -9,6 +9,8 @@ const mapDispatchToProps = dispatch => ({
   onClick: () => dispatch(clap_article()),
 });
 
+
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps,

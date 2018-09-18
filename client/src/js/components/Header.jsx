@@ -49,6 +49,9 @@ Stories
         <span className="sign-in">
 Sign in /Sign up
         </span>
+        <span className="write">
+write
+        </span>
         <div className="clear" />
       </div>
     </div>
