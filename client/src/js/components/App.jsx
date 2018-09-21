@@ -1,5 +1,5 @@
 import React from 'react';
-import { HashRouter, Route, Switch } from 'react-router-dom';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import WriteForm from './Write';
 import Header from './Header';
 import Author from './Author';
@@ -10,12 +10,20 @@ import Landing from './Landing';
 
 const path = require('path');
 
+const FourOhFour = () => (
+  <h1>
+404
+  </h1>
+);
 const App = () => (
-  <HashRouter>
-    <Switch>
-      <Route exact path="/" component={Landing} />
-      <Route path="/write" component={WriteForm} />
-    </Switch>
-  </HashRouter>
+  <BrowserRouter>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Landing} />
+        <Route path="/write" component={WriteForm} />
+        <Route component={FourOhFour} />
+      </Switch>
+    </div>
+  </BrowserRouter>
 );
 export default App;

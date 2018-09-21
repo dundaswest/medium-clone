@@ -1,12 +1,20 @@
 const express = require('express');
 const pg = require('pg');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const session = require('express-session');
 
 app.use(cors());
 app.use(express.static('public'));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'), (err) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
 

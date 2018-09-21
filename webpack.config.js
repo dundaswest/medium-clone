@@ -15,6 +15,8 @@ module.exports = {
   },
   devServer: {
     publicPath: '/public/',
+
+    historyApiFallback: true,
   },
   stats: {
     reasons: true,
@@ -57,7 +59,6 @@ module.exports = {
     ],
   },
   plugins: [
-
     new HtmlWebpackPlugin({
       template: path.join(srcFolder, '/index.html'),
       filename: './index.html',
@@ -66,5 +67,4 @@ module.exports = {
       filename: '[name].css',
     }),
   ],
-
 };

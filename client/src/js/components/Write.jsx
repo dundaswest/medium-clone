@@ -2,7 +2,7 @@ import React from 'react';
 
 const WriteForm = () => (
   <div className="textArea">
-    <textarea>
+    <textarea id="text">
 Write
     </textarea>
   </div>

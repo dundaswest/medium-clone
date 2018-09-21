@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 import logo from '../medium-logo.svg';
 import Spinner from './Spinner';
 
@@ -46,9 +47,9 @@ Stories
       </div>
       <div className="clear" />
       <div>
-        <span className="sign-in">
-Sign in /Sign up
-        </span>
+        <Link to="login" className="sign-in">
+          Login
+        </Link>
         <span className="write">
 write
         </span>
