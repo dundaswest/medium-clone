@@ -7,6 +7,7 @@ import Article from './Article';
 import Sidebar from '../redux/containers/Clap';
 import Footer from './Footer';
 import Landing from './Landing';
+import Login from './Login';
 
 const path = require('path');
 
@@ -21,6 +22,7 @@ const App = () => (
       <Switch>
         <Route exact path="/" component={Landing} />
         <Route path="/write" component={WriteForm} />
+        <Route path="/login" component={Login} />
         <Route component={FourOhFour} />
       </Switch>
     </div>
