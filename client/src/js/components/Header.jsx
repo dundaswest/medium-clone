@@ -53,7 +53,6 @@ Stories
         <Link to="write" className="write">
           write
         </Link>
-
         <div className="clear" />
       </div>
     </div>

@@ -2,12 +2,26 @@ const express = require('express');
 const pg = require('pg');
 const cors = require('cors');
 const path = require('path');
+const passport = require('passport');
 
 const app = express();
+const Local = require('passport-local');
 const session = require('express-session');
+const LocalStrategy = require('passport-local').Strategy;
+// const parseDbUrl = require('parse-database-url');
 
 app.use(cors());
 app.use(express.static('public'));
+app.use(passport.initialize());
+app.use(passport.session());
+app.use(
+  require('express-session')({
+    secret: 'monkeyBanana',
+    resave: false,
+    saveUninitialized: false,
+  }),
+);
+
 app.get('/*', (req, res) => {
   res.sendFile(path.join(__dirname, '../public/index.html'), (err) => {
     if (err) {
@@ -15,7 +29,7 @@ app.get('/*', (req, res) => {
     }
   });
 });
-const passport = require('passport');
+
 const GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
 
 const pool = new pg.Pool({

@@ -15,7 +15,12 @@ const Login = () => (
       <input type="text" id="password" name="password" />
     </div>
     <div>
-      <button type="submit" value="Send your message!" className="submitBtn">
+      <button
+        type="submit"
+        value="Send your message!"
+        className="submitBtn"
+        onClick={() => console.log('hoho')}
+      >
         Submit
       </button>
     </div>
