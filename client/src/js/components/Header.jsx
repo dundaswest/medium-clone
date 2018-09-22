@@ -50,9 +50,10 @@ Stories
         <Link to="login" className="sign-in">
           Login
         </Link>
-        <span className="write">
-write
-        </span>
+        <Link to="write" className="write">
+          write
+        </Link>
+
         <div className="clear" />
       </div>
     </div>
