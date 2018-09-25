@@ -1,7 +1,6 @@
 import React from 'react';
-import {
-  BrowserRouter, Route, Switch, Link, Redirect,
-} from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
+import { bool } from 'prop-types';
 
 const fakeAuth = {
   isAuthenticated: false,
@@ -14,6 +13,7 @@ const fakeAuth = {
     setTimeout(cb, 100);
   },
 };
+/*
 class Login extends React.Component {
   constructor(props) {
     super(props);
@@ -23,6 +23,7 @@ class Login extends React.Component {
   }
 
   login() {
+    console.log('hi');
     fakeAuth.authenticate(() => {
       this.setState(state => ({
         redirectToreferrer: true,
@@ -32,9 +33,9 @@ class Login extends React.Component {
 
   render() {
     const { redirectToreferrer } = this.state;
-
-    if (redirectToreferrer) {
-      return <Redirect to="/" />;
+    console.log(this.props.isLoggedIn);
+    if (this.props) {
+      return <Redirect to="/protected" />;
     }
     return (
       <div>
@@ -59,7 +60,7 @@ You must log in to view this page
               type="submit"
               value="Send your message!"
               className="submitBtn"
-              onClick={this.login.bind(this)}
+              // onClick={this.login.bind(this)}
             >
               Submit
             </button>
@@ -69,8 +70,9 @@ You must log in to view this page
     );
   }
 }
-/*
-const Login = () => (
+*/
+
+const Login = ({ isLoggedIn, onClick }) => (
   <div className="LoginGroup">
     <div className="formGroup">
       <label htmlFor="id" id="idLable">
@@ -85,16 +87,11 @@ const Login = () => (
       <input type="text" id="password" name="password" />
     </div>
     <div>
-      <button
-        type="submit"
-        value="Send your message!"
-        className="submitBtn"
-        onClick={() => console.log('hoho')}
-      >
+      <button type="submit" value="Send your message!" className="submitBtn" onClick={onClick}>
         Submit
       </button>
     </div>
   </div>
 );
-*/
+
 export default Login;
