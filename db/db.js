@@ -1,22 +1,31 @@
-const { Pool, Client } = require('pg')
+const { Pool, Client } = require('pg');
 
 // pools will use environment variables
 // for connection information
-const pool = new Pool()
+const pool = new Pool({
+  user: 'jo-eunbyeol',
+  host: 'localhost',
+  database: 'medium',
+  port: 5432,
+});
 
-pool.query('SELECT NOW()', (err, res) => {
-  console.log(err, res)
-  pool.end()
-})
-
-// you can also use async/await
-const res = await pool.query('SELECT NOW()');
-await pool.end()
-
-// clients will also use environment variables
-// for connection information
-const client = new Client()
-await client.connect()
-
-const res = await client.query('SELECT NOW()')
-await client.end()
+pool.connect((err, data) => {
+  if (err) {
+    console.log(err);
+  } else {
+    console.log('connected');
+  }
+});
+const select = () => {
+  pool.query('SELECT * FROM logins', (err, res) => {
+    if (err) {
+      console.log(err);
+    } else {
+      alert('hi');
+      console.log(res.rows[0]);
+    }
+  });
+};
+module.exports = {
+  select,
+};
