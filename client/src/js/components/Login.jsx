@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 import { bool } from 'prop-types';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import clientId from '../../config';
 
 const responseGoogle = (response) => {
   console.log(response);
@@ -100,8 +101,9 @@ const Login = ({ isLoggedIn, onClick }) => {
         </button>
       </div>
       <GoogleLogin
-        clientId="292354040290-f8tsdusne8r83aob6cm3r0ip7jibfb8m.apps.googleusercontent.com"
-        buttonText="Login with Google"
+        className="googleBtn"
+        clientId={`${clientId}`}
+        buttonText="Sign in with Google"
         onSuccess={onClick}
         onFailure={() => console.log('failed')}
       />

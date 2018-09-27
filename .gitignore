@@ -8,3 +8,5 @@ node_modules/
 public/
 
 Yedam.jpg
+
+client/src/config.js
