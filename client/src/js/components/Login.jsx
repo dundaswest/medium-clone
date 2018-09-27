@@ -100,7 +100,7 @@ const Login = ({ isLoggedIn, onClick }) => {
         </button>
       </div>
       <GoogleLogin
-        clientId="292354040290-f8tsdusne8r83aob6cm3r0ip7jibfb8m.apps.googleusercontent.com"
+        clientId=""
         buttonText="Login with Google"
         onSuccess={onClick}
         onFailure={() => console.log('failed')}
