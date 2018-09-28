@@ -47,9 +47,6 @@ Stories
       </div>
       <div className="clear" />
       <div>
-        <div onClick={onClick}>
-click me
-        </div>
         <Link to="logout" className="log-out" onClick={onClick}>
           Logout
         </Link>
