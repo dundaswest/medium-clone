@@ -37,7 +37,7 @@ Sign in /Sign up
   }
 }
 */
-const Header = () => (
+const Header = ({ isLoggedIn, onClick }) => (
   <Wrapper>
     <div className="header">
       <img src={logo} alt="Medium logo" className="mLogo" />
@@ -47,8 +47,11 @@ Stories
       </div>
       <div className="clear" />
       <div>
-        <Link to="login" className="sign-in">
-          Login
+        <div onClick={onClick}>
+click me
+        </div>
+        <Link to="logout" className="log-out" onClick={onClick}>
+          Logout
         </Link>
         <Link to="write" className="write">
           write

@@ -1,6 +1,5 @@
 import React from 'react';
-import { Redirect } from 'react-router-dom';
-import { bool } from 'prop-types';
+import { Redirect, Link } from 'react-router-dom';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import clientId from '../../config';
 
@@ -78,7 +77,7 @@ You must log in to view this page
 */
 
 const Login = ({ isLoggedIn, onClick }) => {
-  if (isLoggedIn.loggedIn) {
+  if (isLoggedIn) {
     return <Redirect to="/landing" />;
   }
   return (
@@ -100,6 +99,15 @@ const Login = ({ isLoggedIn, onClick }) => {
           Submit
         </button>
       </div>
+      <div className="SignInDiv">
+        <span id="msg">
+Don’t have an account?
+        </span>
+        <Link to="SignUp" className="sign-up">
+          Sign up
+        </Link>
+      </div>
+      <div className="clear" />
       <GoogleLogin
         className="googleBtn"
         clientId={`${clientId}`}
@@ -107,6 +115,7 @@ const Login = ({ isLoggedIn, onClick }) => {
         onSuccess={onClick}
         onFailure={() => console.log('failed')}
       />
+      <div className="clear" />
     </div>
   );
 };
