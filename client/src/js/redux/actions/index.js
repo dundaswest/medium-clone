@@ -21,6 +21,8 @@ export const clear = () => ({
 export const login = () => ({
   type: 'LOGIN',
 });
-export const logout = () => ({
-  type: 'LOGOUT',
+export const signUp = (name, password) => ({
+  type: 'SIGNUP',
+  name,
+  password,
 });

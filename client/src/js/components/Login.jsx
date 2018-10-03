@@ -3,6 +3,8 @@ import { Redirect, Link } from 'react-router-dom';
 import { GoogleLogin, GoogleLogout } from 'react-google-login';
 import clientId from '../../config';
 
+const axios = require('axios');
+
 const responseGoogle = (response) => {
   console.log(response);
 };
@@ -17,30 +19,75 @@ const fakeAuth = {
     setTimeout(cb, 100);
   },
 };
-/*
+
 class Login extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      redirectToreferrer: false,
+      username: '',
+      password: '',
     };
+    this.changePassword = this.changePassword.bind(this);
+    this.changeUserName = this.changeUserName.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   login() {
-    console.log('hi');
-    fakeAuth.authenticate(() => {
-      this.setState(state => ({
-        redirectToreferrer: true,
-      }));
-    });
+    axios({
+      method: 'post',
+      url: '/login',
+      data: {
+        username: this.state.username,
+        password: this.state.password,
+      },
+    })
+      .then((response) => {
+        console.log('loggedIn!!');
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  componentDidMount() {
+    // this.props.onClick();
+  }
+
+  changeUserName(event) {
+    this.setState({ username: event.target.value });
+  }
+
+  changePassword(event) {
+    this.setState({ password: event.target.value });
+  }
+
+  handleSubmit() {
+    console.log('hi', this.state.username, this.state.password);
+    axios({
+      method: 'post',
+      url: '/login',
+      data: {
+        username: this.state.username,
+        password: this.state.password,
+      },
+    })
+      .then((response) => {
+        console.log(response.status);
+        console.log('loggedIn!!!!!!!');
+        // why onClick not running here??
+        this.props.onClick();
+      })
+      .catch((error) => {
+        console.log(error);
+        return <Redirect to="/FourOhFour" />;
+      });
   }
 
   render() {
-    const { redirectToreferrer } = this.state;
-    console.log(this.props.isLoggedIn);
-    if (this.props) {
-      return <Redirect to="/protected" />;
+    if (this.props.isLoggedIn) {
+      return <Redirect to="/landing" />;
     }
+
     return (
       <div>
         <p>
@@ -51,20 +98,20 @@ You must log in to view this page
             <label htmlFor="id" id="idLable">
               Your name*
             </label>
-            <input type="text" id="name" name="name" />
+            <input type="text" id="name" name="name" onChange={this.changeUserName} />
           </div>
           <div className="formGroup">
             <label htmlFor="password" id="passwordLable">
               Your password*
             </label>
-            <input type="text" id="password" name="password" />
+            <input type="text" id="password" name="password" onChange={this.changePassword} />
           </div>
           <div>
             <button
               type="submit"
               value="Send your message!"
               className="submitBtn"
-              // onClick={this.login.bind(this)}
+              onClick={this.handleSubmit}
             >
               Submit
             </button>
@@ -74,8 +121,8 @@ You must log in to view this page
     );
   }
 }
-*/
 
+/*
 const Login = ({ isLoggedIn, onClick }) => {
   if (isLoggedIn) {
     return <Redirect to="/landing" />;
@@ -119,5 +166,5 @@ Don’t have an account?
     </div>
   );
 };
-
+*/
 export default Login;
