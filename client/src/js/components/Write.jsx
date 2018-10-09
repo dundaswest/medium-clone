@@ -5,6 +5,9 @@ const WriteForm = () => (
     <textarea id="text">
 Write
     </textarea>
+    <button id="writeSubmitBtn">
+submit
+    </button>
   </div>
 );
 

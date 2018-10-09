@@ -49,10 +49,6 @@ class Login extends React.Component {
       });
   }
 
-  componentDidMount() {
-    // this.props.onClick();
-  }
-
   changeUserName(event) {
     this.setState({ username: event.target.value });
   }
@@ -116,6 +112,23 @@ You must log in to view this page
               Submit
             </button>
           </div>
+          <div className="SignInDiv">
+            <span id="msg">
+Don’t have an account?
+            </span>
+            <Link to="SignUp" className="sign-up">
+              Sign up
+            </Link>
+          </div>
+          <div className="clear" />
+          <GoogleLogin
+            className="googleBtn"
+            clientId={`${clientId}`}
+            buttonText="Sign in with Google"
+            onSuccess={this.props.onClick}
+            onFailure={() => console.log('failed')}
+          />
+          <div className="clear" />
         </div>
       </div>
     );

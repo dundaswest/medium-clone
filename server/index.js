@@ -1,5 +1,5 @@
 const express = require('express');
-const pg = require('pg');
+
 const cors = require('cors');
 const path = require('path');
 const passport = require('passport');
