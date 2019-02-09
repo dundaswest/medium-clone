@@ -1,5 +1,6 @@
 import React from 'react';
-import yedom from '../Yedam.jpg';
+
+import author from '../boy.svg';
 
 class Author extends React.Component {
   constructor(props) {
@@ -9,13 +10,15 @@ class Author extends React.Component {
   render() {
     return (
       <div className="Author">
-        <img src= {yedom}  className="authorPic" />
+        <img src={author} className="authorPic" />
         <div className="authorName">
-          Yedam Rachmaninoff
+Yedam Rachmaninoff
         </div>
-        <div className="clear"></div>
-        <span className="follow">Follow</span>
-        <div className="clear"></div>
+        <div className="clear" />
+        <span className="follow">
+Follow
+        </span>
+        <div className="clear" />
       </div>
     );
   }

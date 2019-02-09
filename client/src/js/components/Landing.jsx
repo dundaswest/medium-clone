@@ -12,7 +12,6 @@ const Landing = () => (
     <div className="Header">
       <Header />
       <Sidebar />
-      <Author />
       <Article />
       <Footer />
     </div>

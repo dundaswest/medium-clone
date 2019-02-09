@@ -1,61 +1,36 @@
 import React from 'react';
-import styled from 'styled-components';
+
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from '../medium-logo.svg';
+import logoutImg from '../logout.svg';
+import writeImg from '../write.svg';
 import Spinner from './Spinner';
 
-const Wrapper = styled.div`
-  padding: 4em;
-  background: #c7efcf;
-`;
-/*
-class Header extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <Wrapper>
-        <div className="header">
-          <img src={logo} className="mLogo" />
-          <Spinner />
-          <div className="header-title">
-Stories
-          </div>
-          <div className="clear" />
-          <div>
-            <span className="sign-in">
-Sign in /Sign up
-            </span>
-            <div className="clear" />
-          </div>
-        </div>
-      </Wrapper>
-    );
-  }
-}
-*/
 const Header = ({ isLoggedIn, onClick }) => (
-  <Wrapper>
-    <div className="header">
+  <div className="header">
+    <div className="logoWapper">
       <img src={logo} alt="Medium logo" className="mLogo" />
-      <Spinner />
+      <svg className="line">
+        <path d="M1 29V1" stroke="#D5D5D5" strokeWidth=".5" fill="none" strokeLinecap="round" />
+      </svg>
       <div className="header-title">
 Stories
       </div>
       <div className="clear" />
-      <div>
-        <Link to="login" className="log-out" onClick={onClick}>
-          Logout
-        </Link>
-        <Link to="write" className="write">
-          write
-        </Link>
-        <div className="clear" />
-      </div>
     </div>
-  </Wrapper>
+
+    <div className="nav-bar">
+      <Link to="login" className="log-out" onClick={onClick}>
+        <img src={logoutImg} alt="Medium logout" className="logoutImg" />
+        Logout
+      </Link>
+      <Link to="write" className="write">
+        <img src={writeImg} alt="Medium write" className="writeImg" />
+        write
+      </Link>
+      <div className="clear" />
+    </div>
+  </div>
 );
 export default Header;

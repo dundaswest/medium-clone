@@ -1,21 +1,16 @@
 import React from 'react';
 import Text from './Text';
 
-class Author extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div>
-        <div className="ArticleTitle">
-How to Sing like yedam
-        </div>
-        <Text />
-      </div>
-    );
-  }
-}
+const Author = () => (
+  <div className="Article">
+    <div className="ArticleTitle">
+Intellegat scriptorem
+    </div>
+    <div className="ArticleSubTitle">
+Ne sea legimus accusata aliquando, est iudico iisque ei.
+    </div>
+    <Text />
+  </div>
+);
 
 export default Author;
