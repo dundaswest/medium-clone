@@ -14,7 +14,6 @@ const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 
-// const db = require('../db');
 const User = require('../db/mongoose');
 
 mongoose.connect('mongodb://localhost/passport_local_mongoose_express4');
@@ -42,6 +41,7 @@ app.get('/*', (req, res) => {
 app.get('/logout', (req, res) => {
   req.logout();
   console.log('logged out!');
+  res.redirect('/');
 });
 app.post('/signUp', (req, res) => {
   console.log('body', req.body);
@@ -56,7 +56,8 @@ app.post('/signUp', (req, res) => {
   });
 });
 app.post('/login', passport.authenticate('local'), (req, res) => {
-  console.log('from server/login', req.body);
+  console.log('from server/login', res.query);
+
   res.send('loggedIn');
 });
 
