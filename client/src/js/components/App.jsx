@@ -10,7 +10,7 @@ import Sidebar from '../redux/containers/Clap';
 import Footer from './Footer';
 import Landing from './Landing';
 import Login from '../redux/containers/Login';
-// import SignInWith from './SignInWith';
+import Editor from './Editor';
 import SignUp from './SignUp';
 import Logout from '../redux/containers/Logout';
 

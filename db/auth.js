@@ -6,7 +6,7 @@ mongoose.connect(
   { useNewUrlParser: true },
 );
 const db = mongoose.connection;
-db.once('open', () => console.log('hi'));
+db.once('open', () => console.log('from auth'));
 
 const UserSchema = new mongoose.Schema({
   username: String,

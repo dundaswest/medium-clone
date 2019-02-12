@@ -4,19 +4,18 @@ const cors = require('cors');
 const path = require('path');
 const passport = require('passport');
 const bodyParser = require('body-parser');
-const GoogleStrategy = require('passport-google-oauth').OAuthStrategy;
-const passportLocalMongoose = require('passport-local-mongoose');
 
 const router = express.Router();
 const app = express();
-const Local = require('passport-local');
 const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
 
-const User = require('../db/mongoose');
+const User = require('../db/auth');
+const Story = require('../db/story');
 
 mongoose.connect('mongodb://localhost/passport_local_mongoose_express4');
+const db = mongoose.connection;
 app.use(cors());
 app.use(bodyParser());
 
@@ -45,16 +44,23 @@ app.get('/logout', (req, res) => {
 });
 app.post('/signUp', (req, res) => {
   console.log('body', req.body);
+
   User.register(new User({ username: req.body.username }), req.body.password, (err, user) => {
     if (err) {
       console.log(err);
     }
-    passport.authenticate('local', { failureRedirect: '/FourOhFour' })(req, res, () => {
+    passport.authenticate('local', { failurmongeRedirect: '/FourOhFour' })(req, res, () => {
       console.log('loggedIn');
       res.send('haha');
     });
   });
 });
+app.post('/addStory', (req, res) => {
+  const StoryInstance = new Story({ title: req.body.title, text: req.body.text });
+  db.collection('story').insertOne(StoryInstance);
+  res.send('saved');
+});
+
 app.post('/login', passport.authenticate('local'), (req, res) => {
   console.log('from server/login', res.query);
 
