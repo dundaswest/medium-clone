@@ -1,10 +1,9 @@
 import React from 'react';
-
-import axios from 'axios';
 import { Link } from 'react-router-dom';
 import logo from '../medium-logo.svg';
 import logoutImg from '../logout.svg';
 import writeImg from '../write.svg';
+import readImg from '../open-book.svg';
 import Spinner from './Spinner';
 
 const Header = ({ isLoggedIn, onClick }) => (
@@ -28,6 +27,10 @@ Stories
       <Link to="write" className="write">
         <img src={writeImg} alt="Medium write" className="writeImg" />
         write
+      </Link>
+      <Link to="list" className="list">
+        <img src={readImg} alt="Medium read" className="readImg" />
+        Your stories
       </Link>
       <div className="clear" />
     </div>

@@ -11,6 +11,7 @@ import Footer from './Footer';
 import Landing from './Landing';
 import Login from '../redux/containers/Login';
 import Editor from './Editor';
+import List from './List';
 import SignUp from './SignUp';
 import Logout from '../redux/containers/Logout';
 
@@ -65,6 +66,7 @@ const App = () => (
         <Route exact path="/landing" component={Landing} />
         <Route path="/write" component={WriteForm} />
         <Route path="/login" component={Login} />
+        <Route path="/list" component={List} />
         <PrivateRoute path="/protected" component={Protected} />
         <Route path="/signUp" component={SignUp} />
         <Route component={FourOhFour} />

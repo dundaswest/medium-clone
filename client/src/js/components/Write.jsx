@@ -1,4 +1,5 @@
 import React from 'react';
+import Header from './Header';
 
 const axios = require('axios');
 
@@ -38,12 +39,15 @@ class WriteForm extends React.Component {
 
   render() {
     return (
-      <div className="textArea">
-        <textarea id="title" placeholder="Title" onChange={this.handleTitleChange} />
-        <textarea id="text" placeholder="Tell your story..." onChange={this.handleTextChange} />
-        <button id="writeSubmitBtn" onClick={this.handleSubmit}>
-          submit
-        </button>
+      <div>
+        <Header />
+        <div className="textArea">
+          <textarea id="title" placeholder="Title" onChange={this.handleTitleChange} />
+          <textarea id="text" placeholder="Tell your story..." onChange={this.handleTextChange} />
+          <button id="writeSubmitBtn" onClick={this.handleSubmit}>
+            submit
+          </button>
+        </div>
       </div>
     );
   }
