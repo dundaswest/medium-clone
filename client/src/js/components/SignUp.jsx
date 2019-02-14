@@ -1,32 +1,8 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { Redirect, Link } from 'react-router-dom';
-import { signUp } from '../redux/actions';
+
+import { Redirect } from 'react-router-dom';
 
 const axios = require('axios');
-/*
-const SignUp = () => (
-  <div className="LoginGroup">
-    <div className="formGroup">
-      <label htmlFor="id" id="idLable">
-        Your name*
-      </label>
-      <input type="text" id="name" name="name" />
-    </div>
-    <div className="formGroup">
-      <label htmlFor="password" id="passwordLable">
-        Your password*
-      </label>
-      <input type="text" id="password" name="password" />
-    </div>
-    <div>
-      <button type="submit" className="submitBtn" onClick={() => console.log('hi')}>
-        Submit
-      </button>
-    </div>
-  </div>
-);
-*/
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -36,31 +12,29 @@ class SignUp extends React.Component {
       password: '',
       isLoggedIn: false,
     };
-    this.changePassword = this.changePassword.bind(this);
-    this.changeUserName = this.changeUserName.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   componentDidMount() {
     console.log(this.props);
   }
 
-  changeUserName(event) {
+  changeUserName = (event) => {
     this.setState({ username: event.target.value });
-  }
+  };
 
-  changePassword(event) {
+  changePassword = (event) => {
     this.setState({ password: event.target.value });
-  }
+  };
 
-  handleSubmit() {
-    console.log('hi', this.state.username, this.state.password);
+  handleSubmit = () => {
+    const { username, password } = this.state;
+    console.log('hi', username, password);
     axios({
       method: 'post',
       url: '/signUp',
       data: {
-        username: this.state.username,
-        password: this.state.password,
+        username,
+        password,
       },
     })
       .then((response) => {
@@ -70,28 +44,38 @@ class SignUp extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-  }
+  };
 
   render() {
-    if (this.state.isLoggedIn) {
+    const { isLoggedIn } = this.state;
+    if (isLoggedIn) {
       return <Redirect to="/landing" />;
     }
     return (
       <div className="LoginGroup">
-        <div className="formGroup">
-          <label htmlFor="id" id="idLable">
-            Your name*
-          </label>
-          <input type="text" id="name" name="name" onChange={this.changeUserName} />
+        <div id="Login-title">
+SIGN UP
         </div>
         <div className="formGroup">
-          <label htmlFor="password" id="passwordLable">
-            Your password*
-          </label>
-          <input type="text" id="password" name="password" onChange={this.changePassword} />
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your name"
+            onChange={this.changeUserName}
+          />
         </div>
-        <div>
-          <button type="submit" className="submitBtn" onClick={this.handleSubmit}>
+        <div className="formGroup">
+          <input
+            type="text"
+            id="password"
+            name="password"
+            onChange={this.changePassword}
+            placeholder="Your password"
+          />
+        </div>
+        <div className="formGroup">
+          <button type="submit" id="SignIn-submitBtn" onClick={this.handleSubmit}>
             Submit
           </button>
         </div>

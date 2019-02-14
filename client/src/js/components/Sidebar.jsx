@@ -5,52 +5,22 @@ import twitter from '../twitter.svg';
 import bookmark from '../bookmark-white.svg';
 import facebook from '../facebook.svg';
 
-/*
-class Sidebar extends React.Component {
-  constructor(props) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <div className='sideBar'>
-        <div>
-          <div id='clapNum'>
-            300
-          </div>
-        <img src={clap} id='clap' />
-        </div>
-        <div>
-        <img src={twitter} id='twitter' />
-        </div>
-        <div>
-        <img src={bookmark} id='bookmark' />
-        </div>
-        <div>
-        <img src={facebook} id='facebook' />
-        </div>
-
-      </div>
-    );
-  }
-}
-*/
 const Sidebar = ({ clap_num, onClick }) => (
   <div className="sideBar">
     <div>
       <div id="clapNum">
         {clap_num}
       </div>
-      <img src={clap} id="clap" onClick={onClick} />
+      <img src={clap} alt="clapPic" id="clap" onClick={onClick} />
     </div>
     <div>
-      <img src={twitter} id="twitter" />
+      <img src={twitter} alt="twitterPic" id="twitter" />
     </div>
     <div>
-      <img src={bookmark} id="bookmark" />
+      <img src={bookmark} alt="bookmarkPic" id="bookmark" />
     </div>
     <div>
-      <img src={facebook} id="facebook" />
+      <img src={facebook} alt="facebookPic" id="facebook" />
     </div>
   </div>
 );

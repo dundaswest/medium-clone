@@ -3,19 +3,12 @@ import {
   BrowserRouter, Route, Switch, Link, Redirect,
 } from 'react-router-dom';
 import WriteForm from './Write';
-import Header from './Header';
-import Author from './Author';
-import Article from './Article';
-import Sidebar from '../redux/containers/Clap';
-import Footer from './Footer';
+
 import Landing from './Landing';
 import Login from '../redux/containers/Login';
-import Editor from './Editor';
+
 import List from './List';
 import SignUp from './SignUp';
-import Logout from '../redux/containers/Logout';
-
-const path = require('path');
 
 const FourOhFour = () => (
   <h1>

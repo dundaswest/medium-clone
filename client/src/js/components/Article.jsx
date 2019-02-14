@@ -1,16 +1,47 @@
 import React from 'react';
 import Text from './Text';
 
-const Author = () => (
-  <div className="Article">
-    <div className="ArticleTitle">
-Intellegat scriptorem
-    </div>
-    <div className="ArticleSubTitle">
-Ne sea legimus accusata aliquando, est iudico iisque ei.
-    </div>
-    <Text />
-  </div>
-);
+class Article extends React.Component {
+  state = {
+    title: 'Intellegat scriptorem',
+    subtitle: 'Ne sea legimus accusata aliquando, est iudico iisque ei.',
+    text: '',
+  };
 
-export default Author;
+  componentDidMount() {
+    const { articleData } = this.props;
+    if (articleData) {
+      const sub = articleData.data.text.slice(10, 65);
+      this.setState({
+        title: articleData.data.title,
+        subtitle: sub,
+        text: articleData.data.text,
+      });
+    }
+  }
+
+  render() {
+    const { title, subtitle, text } = this.state;
+    return (
+      <div className="Article">
+        <div className="ArticleTitle">
+          {title}
+        </div>
+        <div className="ArticleSubTitle">
+          {subtitle}
+        </div>
+        {text ? (
+          <div className="TextDiv">
+            <div className="ArticleText">
+              {text}
+            </div>
+          </div>
+        ) : (
+          <Text />
+        )}
+      </div>
+    );
+  }
+}
+
+export default Article;

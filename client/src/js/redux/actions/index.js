@@ -2,7 +2,6 @@ const clap_num = 0;
 
 export const clap_article = () => ({
   type: 'CLAP_ARTICLE',
-  // clap_num: clap_num++,
 });
 
 export const success = message => ({
@@ -20,6 +19,9 @@ export const clear = () => ({
 });
 export const login = () => ({
   type: 'LOGIN',
+});
+export const logout = () => ({
+  type: 'LOGOUT',
 });
 export const signUp = (name, password) => ({
   type: 'SIGNUP',

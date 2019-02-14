@@ -1,20 +1,28 @@
 import React from 'react';
 import { HashRouter, Route } from 'react-router-dom';
-import WriteForm from './Write';
+
 import Header from '../redux/containers/Logout';
-import Author from './Author';
 import Article from './Article';
 import Sidebar from '../redux/containers/Clap';
 import Footer from './Footer';
 
-const Landing = () => (
-  <div>
-    <div className="Header">
-      <Header />
-      <Sidebar />
-      <Article />
-      <Footer />
+const Landing = (props) => {
+  const { location } = props;
+  let articleData = '';
+  if (location.state) {
+    articleData = location.state;
+  }
+
+  return (
+    <div>
+      <div className="Header">
+        <Header />
+        <Sidebar />
+        <Article articleData={articleData} />
+        <Footer />
+      </div>
     </div>
-  </div>
-);
+  );
+};
+
 export default Landing;

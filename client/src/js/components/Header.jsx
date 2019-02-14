@@ -4,21 +4,21 @@ import logo from '../medium-logo.svg';
 import logoutImg from '../logout.svg';
 import writeImg from '../write.svg';
 import readImg from '../open-book.svg';
-import Spinner from './Spinner';
 
 const Header = ({ isLoggedIn, onClick }) => (
   <div className="header">
-    <div className="logoWapper">
-      <img src={logo} alt="Medium logo" className="mLogo" />
-      <svg className="line">
-        <path d="M1 29V1" stroke="#D5D5D5" strokeWidth=".5" fill="none" strokeLinecap="round" />
-      </svg>
-      <div className="header-title">
+    <Link to="landing">
+      <div className="logoWapper">
+        <img src={logo} alt="Medium logo" className="mLogo" />
+        <svg className="line">
+          <path d="M1 29V1" stroke="#D5D5D5" strokeWidth=".5" fill="none" strokeLinecap="round" />
+        </svg>
+        <div className="header-title">
 Stories
+        </div>
+        <div className="clear" />
       </div>
-      <div className="clear" />
-    </div>
-
+    </Link>
     <div className="nav-bar">
       <Link to="login" className="log-out" onClick={onClick}>
         <img src={logoutImg} alt="Medium logout" className="logoutImg" />

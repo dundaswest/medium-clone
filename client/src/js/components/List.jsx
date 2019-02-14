@@ -24,6 +24,24 @@ class List extends React.Component {
       });
   };
 
+  handleItemClick = (e) => {
+    const title = e.currentTarget.getAttribute('value');
+    console.log(e.currentTarget.getAttribute('value'));
+
+    axios
+      .get('/getStory', {
+        params: {
+          title,
+        },
+      })
+      .then((response) => {
+        console.log(response.data);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   render() {
     const { data } = this.state;
     return (
@@ -31,7 +49,9 @@ class List extends React.Component {
         <Header />
         <Author />
         <div className="ListItemContainer" />
-        {data.map(item => <ListItem item={item} key={item.title} />)}
+        {data.map(item => (
+          <ListItem item={item} handleItemClick={this.handleItemClick} key={item.title} />
+        ))}
       </div>
     );
   }

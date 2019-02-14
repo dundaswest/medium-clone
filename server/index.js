@@ -53,7 +53,18 @@ app.get('/getList', (req, res) => {
       }
     });
 });
-
+app.get('/getStory', (req, res) => {
+  const title = req.query.title;
+  db.collection('story')
+    .find({ title })
+    .toArray((err, list) => {
+      if (err) {
+        console.log(err);
+      } else {
+        res.send(list);
+      }
+    });
+});
 app.get('/logout', (req, res) => {
   req.logout();
   console.log('logged out!');
