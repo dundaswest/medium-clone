@@ -1,6 +1,6 @@
 import React from 'react';
 
-import author from '../boy.svg';
+import author from '../imgs/boy.svg';
 
 const Author = () => (
   <div className="Author">

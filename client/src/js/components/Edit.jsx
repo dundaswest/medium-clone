@@ -3,14 +3,26 @@ import Header from './Header';
 
 const axios = require('axios');
 
-class WriteForm extends React.Component {
+class EditForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       title: '',
       text: '',
-      value: '',
+      id: '',
     };
+  }
+
+  componentDidMount() {
+    console.log('edit', this.props.location.state.data);
+
+    const articleData = this.props.location.state.data;
+
+    this.setState({
+      title: articleData.title,
+      text: articleData.text,
+      id: articleData.id,
+    });
   }
 
   handleTitleChange = (e) => {
@@ -24,11 +36,11 @@ class WriteForm extends React.Component {
   };
 
   handleSubmit = () => {
-    const { title, text } = this.state;
-    const params = { title, text };
+    const { title, text, id } = this.state;
+    const data = { title, text, id };
 
     axios
-      .post('/addStory', params)
+      .put(`/${id}`, data)
       .then((res) => {
         console.log(res);
         console.log('saved');
@@ -43,8 +55,8 @@ class WriteForm extends React.Component {
       <div>
         <Header />
         <div className="textArea">
-          <textarea id="title" placeholder="Title" onChange={this.handleTitleChange} />
-          <textarea id="text" placeholder="Tell your story..." onChange={this.handleTextChange} />
+          <textarea id="title" value={this.state.title} onChange={this.handleTitleChange} />
+          <textarea id="text" value={this.state.text} onChange={this.handleTextChange} />
           <button id="writeSubmitBtn" onClick={this.handleSubmit}>
             submit
           </button>
@@ -53,4 +65,4 @@ class WriteForm extends React.Component {
     );
   }
 }
-export default WriteForm;
+export default EditForm;

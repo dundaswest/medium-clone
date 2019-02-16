@@ -1,5 +1,5 @@
 import React from 'react';
-import author from '../boy.svg';
+import author from '../imgs/boy.svg';
 
 const Footer = () => (
   <div className="footerDiv">
@@ -10,7 +10,7 @@ written by
       </div>
 
       <div id="authorName-footer">
-Yedam Rachmaninoff
+Chandler Bing
       </div>
       <div>
         Philosophy, Literature, Food, Computer Science. Questions are underrated. Likes complexity

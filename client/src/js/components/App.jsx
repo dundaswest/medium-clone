@@ -3,7 +3,7 @@ import {
   BrowserRouter, Route, Switch, Link, Redirect,
 } from 'react-router-dom';
 import WriteForm from './Write';
-
+import EditForm from './Edit';
 import Landing from './Landing';
 import Login from '../redux/containers/Login';
 
@@ -58,6 +58,7 @@ const App = () => (
         <Route exact path="/" component={Public} />
         <Route exact path="/landing" component={Landing} />
         <Route path="/write" component={WriteForm} />
+        <Route path="/edit" component={EditForm} />
         <Route path="/login" component={Login} />
         <Route path="/list" component={List} />
         <PrivateRoute path="/protected" component={Protected} />

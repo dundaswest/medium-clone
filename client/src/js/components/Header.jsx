@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../medium-logo.svg';
-import logoutImg from '../logout.svg';
-import writeImg from '../write.svg';
-import readImg from '../open-book.svg';
+import logo from '../imgs/medium-logo.svg';
+import logoutImg from '../imgs/logout.svg';
+import writeImg from '../imgs/write.svg';
+import readImg from '../imgs/open-book.svg';
 
 const Header = ({ isLoggedIn, onClick }) => (
   <div className="header">

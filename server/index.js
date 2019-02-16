@@ -13,6 +13,7 @@ const mongoose = require('mongoose');
 
 const User = require('../db/auth');
 const Story = require('../db/story');
+const ObjectId = require('mongodb').ObjectID;
 
 mongoose.connect(
   'mongodb://localhost/passport_local_mongoose_express4',
@@ -88,6 +89,29 @@ app.post('/addStory', (req, res) => {
   const StoryInstance = new Story({ title: req.body.title, text: req.body.text });
   db.collection('story').insertOne(StoryInstance);
   res.send('saved');
+});
+
+app.put('/:id', (req, res) => {
+  console.log(req);
+  const { title, text, id } = req.body;
+  const newData = { title, text };
+  db.collection('story').updateOne({ _id: ObjectId(id) }, { $set: newData }, (err, data) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send('UPDATED');
+  });
+});
+/* start */
+
+app.delete('/:id', (req, res) => {
+  const { id } = req.params;
+  db.collection('story').findOneAndDelete({ _id: ObjectId(id) }, (err, data) => {
+    if (err) {
+      res.send(err);
+    }
+    res.send('DELETED');
+  });
 });
 
 app.post('/login', passport.authenticate('local'), (req, res) => {

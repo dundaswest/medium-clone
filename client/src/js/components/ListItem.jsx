@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import author from '../boy.svg';
+import author from '../imgs/boy.svg';
 
 const ListItem = (props) => {
   const { item, handleItemClick } = props;

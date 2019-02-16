@@ -1,9 +1,9 @@
 import React from 'react';
 import { number } from 'prop-types';
-import clap from '../clap.svg';
-import twitter from '../twitter.svg';
-import bookmark from '../bookmark-white.svg';
-import facebook from '../facebook.svg';
+import clap from '../imgs/clap.svg';
+import twitter from '../imgs/twitter.svg';
+import bookmark from '../imgs/bookmark-white.svg';
+import facebook from '../imgs/facebook.svg';
 
 const Sidebar = ({ clap_num, onClick }) => (
   <div className="sideBar">
