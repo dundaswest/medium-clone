@@ -1,11 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 import logo from '../imgs/medium-logo.svg';
 import logoutImg from '../imgs/logout.svg';
 import writeImg from '../imgs/write.svg';
 import readImg from '../imgs/open-book.svg';
 
-const Header = ({ isLoggedIn, onClick }) => (
+const Header = ({ onClick }) => (
   <div className="header">
     <Link to="landing">
       <div className="logoWapper">
@@ -36,4 +37,9 @@ Stories
     </div>
   </div>
 );
+
+Header.propTypes = {
+  onClick: PropTypes.func.isRequired,
+};
+
 export default Header;

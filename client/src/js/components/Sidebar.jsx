@@ -1,17 +1,17 @@
 import React from 'react';
-import { number } from 'prop-types';
+import { PropTypes } from 'prop-types';
 import clap from '../imgs/clap.svg';
 import twitter from '../imgs/twitter.svg';
 import bookmark from '../imgs/bookmark-white.svg';
 import facebook from '../imgs/facebook.svg';
 
-const Sidebar = ({ clap_num, onClick }) => (
+const Sidebar = ({ clapNum, onClick }) => (
   <div className="sideBar">
     <div>
       <div id="clapNum">
-        {clap_num}
+        {clapNum}
       </div>
-      <img src={clap} alt="clapPic" id="clap" onClick={onClick} />
+      <img src={clap} alt="clapPic" id="clap" onClick={onClick} role="submit" onKeyDown={onClick} />
     </div>
     <div>
       <img src={twitter} alt="twitterPic" id="twitter" />
@@ -26,6 +26,7 @@ const Sidebar = ({ clap_num, onClick }) => (
 );
 
 Sidebar.propTypes = {
-  clap_num: number.isRequired,
+  clapNum: PropTypes.number.isRequired,
+  onClick: PropTypes.func.isRequired,
 };
 export default Sidebar;

@@ -1,6 +1,7 @@
 import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import { GoogleLogin, GoogleLogout } from 'react-google-login';
+import PropTypes from 'prop-types';
+import { GoogleLogin } from 'react-google-login';
 import clientId from '../../config';
 
 const axios = require('axios');
@@ -35,9 +36,8 @@ class Login extends React.Component {
       },
     })
       .then((response) => {
-        console.log(response.status);
         console.log('loggedIn!!!!!!!');
-        // why onClick not running here??
+
         onClick();
       })
       .catch((error) => {
@@ -117,5 +117,8 @@ Don’t have an account?
     );
   }
 }
-
+Login.propTypes = {
+  onClick: PropTypes.func.isRequired,
+  isLoggedIn: PropTypes.bool.isRequired,
+};
 export default Login;

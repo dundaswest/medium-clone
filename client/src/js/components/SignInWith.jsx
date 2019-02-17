@@ -1,6 +1,7 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import GoogleLogin from 'react-google-login';
+import { PropTypes } from 'prop-types';
 
 const SignInWith = (props) => {
   const responseGoogle = (res) => {
@@ -23,11 +24,11 @@ const SignInWith = (props) => {
       <div
         data-behavior="overlay"
         className={
-          this.props.modalMode === true ? 'overlay overlay-hugeinc open' : 'overlay overlay-hugeinc'
+          props.modalMode === true ? 'overlay overlay-hugeinc open' : 'overlay overlay-hugeinc'
         }
       >
         <button
-          onClick={this.props.toggleClose}
+          onClick={props.toggleClose}
           data-behavior="close-overlay"
           type="button"
           className="overlay-close"

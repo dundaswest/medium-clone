@@ -9,7 +9,6 @@ class WriteForm extends React.Component {
     this.state = {
       title: '',
       text: '',
-      value: '',
     };
   }
 
@@ -45,7 +44,7 @@ class WriteForm extends React.Component {
         <div className="textArea">
           <textarea id="title" placeholder="Title" onChange={this.handleTitleChange} />
           <textarea id="text" placeholder="Tell your story..." onChange={this.handleTextChange} />
-          <button id="writeSubmitBtn" onClick={this.handleSubmit}>
+          <button id="writeSubmitBtn" type="submit" onClick={this.handleSubmit}>
             submit
           </button>
         </div>

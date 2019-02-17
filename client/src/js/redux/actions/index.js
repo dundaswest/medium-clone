@@ -1,6 +1,4 @@
-const clap_num = 0;
-
-export const clap_article = () => ({
+export const clapArticle = () => ({
   type: 'CLAP_ARTICLE',
 });
 

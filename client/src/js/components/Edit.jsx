@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { Link, Redirect } from 'react-router-dom';
 import Header from './Header';
 
 const axios = require('axios');
@@ -14,9 +16,10 @@ class EditForm extends React.Component {
   }
 
   componentDidMount() {
-    console.log('edit', this.props.location.state.data);
+    const { location } = this.props;
+    console.log('edit', location.state.data);
 
-    const articleData = this.props.location.state.data;
+    const articleData = location.state.data;
 
     this.setState({
       title: articleData.title,
@@ -51,13 +54,15 @@ class EditForm extends React.Component {
   };
 
   render() {
+    const { title, text } = this.state;
     return (
       <div>
         <Header />
         <div className="textArea">
-          <textarea id="title" value={this.state.title} onChange={this.handleTitleChange} />
-          <textarea id="text" value={this.state.text} onChange={this.handleTextChange} />
-          <button id="writeSubmitBtn" onClick={this.handleSubmit}>
+          <textarea id="title" value={title} onChange={this.handleTitleChange} />
+          <textarea id="text" value={text} onChange={this.handleTextChange} />
+
+          <button id="writeSubmitBtn" type="submit" onClick={this.handleSubmit}>
             submit
           </button>
         </div>
@@ -65,4 +70,11 @@ class EditForm extends React.Component {
     );
   }
 }
+
+EditForm.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
+
 export default EditForm;

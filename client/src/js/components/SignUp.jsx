@@ -14,10 +14,6 @@ class SignUp extends React.Component {
     };
   }
 
-  componentDidMount() {
-    console.log(this.props);
-  }
-
   changeUserName = (event) => {
     this.setState({ username: event.target.value });
   };

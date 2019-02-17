@@ -7,7 +7,8 @@ const store = createStore(
   compose(
     applyMiddleware(thunk),
     typeof window === 'object' && typeof window.devToolsExtension !== 'undefined'
-      ? window.devToolsExtension()
+      ? // eslint-disable-next-line no-underscore-dangle
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
       : f => f,
   ),
 );

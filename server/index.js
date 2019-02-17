@@ -10,10 +10,9 @@ const app = express();
 const session = require('express-session');
 const LocalStrategy = require('passport-local').Strategy;
 const mongoose = require('mongoose');
-
+const ObjectId = require('mongodb').ObjectID;
 const User = require('../db/auth');
 const Story = require('../db/story');
-const ObjectId = require('mongodb').ObjectID;
 
 mongoose.connect(
   'mongodb://localhost/passport_local_mongoose_express4',
@@ -33,12 +32,10 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../public/index.html'), (err) => {
-    if (err) {
-      res.status(500).send(err);
-    }
-  });
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
 });
 
 app.get('/getList', (req, res) => {
@@ -55,7 +52,7 @@ app.get('/getList', (req, res) => {
     });
 });
 app.get('/getStory', (req, res) => {
-  const title = req.query.title;
+  const { title } = req.query;
   db.collection('story')
     .find({ title })
     .toArray((err, list) => {
@@ -79,8 +76,7 @@ app.post('/signUp', (req, res) => {
       console.log(err);
     }
     passport.authenticate('local', { failurmongeRedirect: '/FourOhFour' })(req, res, () => {
-      console.log('loggedIn');
-      res.send('haha');
+      res.send('loggedIn');
     });
   });
 });
@@ -92,7 +88,6 @@ app.post('/addStory', (req, res) => {
 });
 
 app.put('/:id', (req, res) => {
-  console.log(req);
   const { title, text, id } = req.body;
   const newData = { title, text };
   db.collection('story').updateOne({ _id: ObjectId(id) }, { $set: newData }, (err, data) => {
@@ -102,7 +97,6 @@ app.put('/:id', (req, res) => {
     res.send('UPDATED');
   });
 });
-/* start */
 
 app.delete('/:id', (req, res) => {
   const { id } = req.params;
@@ -117,5 +111,11 @@ app.delete('/:id', (req, res) => {
 app.post('/login', passport.authenticate('local'), (req, res) => {
   res.send('loggedIn');
 });
-
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../public/index.html'), (err) => {
+    if (err) {
+      res.status(500).send(err);
+    }
+  });
+});
 app.listen(3000, () => console.log('Example app listening on port 3000!'));

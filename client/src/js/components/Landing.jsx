@@ -1,6 +1,5 @@
 import React from 'react';
-import { HashRouter, Route } from 'react-router-dom';
-
+import PropTypes from 'prop-types';
 import Header from '../redux/containers/Logout';
 import Article from './Article';
 import Sidebar from '../redux/containers/Clap';
@@ -24,5 +23,9 @@ const Landing = (props) => {
     </div>
   );
 };
-
+Landing.propTypes = {
+  location: PropTypes.shape({
+    pathname: PropTypes.string.isRequired,
+  }).isRequired,
+};
 export default Landing;
