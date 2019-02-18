@@ -11,7 +11,7 @@ const Sidebar = ({ clapNum, onClick }) => (
       <div id="clapNum">
         {clapNum}
       </div>
-      <img src={clap} alt="clapPic" id="clap" onClick={onClick} role="submit" onKeyDown={onClick} />
+      <img src={clap} alt="clapPic" id="clap" onClick={onClick} />
     </div>
     <div>
       <img src={twitter} alt="twitterPic" id="twitter" />
