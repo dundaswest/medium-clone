@@ -1,18 +1,19 @@
-const mongoose = require('mongoose');
-const passportLocalMongoose = require('passport-local-mongoose');
+const mongoose = require("mongoose");
+const passportLocalMongoose = require("passport-local-mongoose");
 
 mongoose.connect(
-  'mongodb://localhost/passport_local_mongoose_express4',
-  { useNewUrlParser: true },
+  "mongodb://localhost/passport_local_mongoose_express4",
+  { useNewUrlParser: true }
 );
+
 const db = mongoose.connection;
-db.once('open', () => console.log('from auth'));
+db.once("open", () => console.log("from auth"));
 
 const UserSchema = new mongoose.Schema({
   username: String,
-  password: String,
+  password: String
 });
 
 UserSchema.plugin(passportLocalMongoose);
 
-module.exports = mongoose.model('User', UserSchema);
+module.exports = mongoose.model("User", UserSchema);
