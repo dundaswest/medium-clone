@@ -5,6 +5,7 @@ const path = require('path');
 const passport = require('passport');
 const bodyParser = require('body-parser');
 
+const port = process.env.PORT || 3000;
 const router = express.Router();
 const app = express();
 const session = require('express-session');
@@ -118,4 +119,4 @@ app.get('*', (req, res) => {
     }
   });
 });
-app.listen(3000, () => console.log('Example app listening on port 3000!'));
+app.listen(port, () => console.log(`app listening on port ${port}`));
