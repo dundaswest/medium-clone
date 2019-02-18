@@ -3,12 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "engines": {
+    "node": "10.3.0"
+  },
   "scripts": {
     "test": "jest",
     "test:update": "NODE_ENV=test jest -u",
     "dev": "webpack -d --watch --display-error-details --history-api-fallback",
     "start": "nodemon server/index.js",
-    "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\""
+    "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\"",
+    "heroku-prebuild": "npm install --only=dev",
+    "heroku-postbuild": "webpack -p"
   },
   "jest": {
     "snapshotSerializers": [
@@ -41,7 +46,7 @@
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
     "identity-obj-proxy": "^3.0.0",
-    "jest": "^23.5.0",
+    "jest": "^24.1.0",
     "mini-css-extract-plugin": "^0.4.1",
     "webpack-cli": "^3.1.0"
   },
@@ -53,6 +58,7 @@
     "babel-core": "^7.0.0-bridge.0",
     "babel-eslint": "^8.2.6",
     "babel-plugin-styled-components": "^1.6.3",
+    "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "enzyme-to-json": "^3.3.4",
