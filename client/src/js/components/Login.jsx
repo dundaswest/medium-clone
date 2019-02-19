@@ -67,6 +67,7 @@ class Login extends React.Component {
   }
 
   render() {
+    console.log(clientId);
     const { isLoggedIn, onClick } = this.props;
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
