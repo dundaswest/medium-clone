@@ -30,8 +30,8 @@ const db = mongoose.connection;
 app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(express.static('public'));
-
+// app.use(express.static('public'));
+app.use(express.static(`${__dirname}/public`));
 app.use(session({ secret: 'secret', resave: true, saveUninitialized: false }));
 app.use(passport.initialize());
 app.use(passport.session());
