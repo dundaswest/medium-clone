@@ -5,7 +5,7 @@ import { GoogleLogin } from 'react-google-login';
 import keys from '../../../../config/keys';
 
 const clientId = keys;
-
+console.log(process.env);
 const axios = require('axios');
 
 class Login extends React.Component {
