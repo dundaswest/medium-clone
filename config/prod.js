@@ -1,3 +1,3 @@
 module.exports = {
-  clientId: process.env.API_KEY,
+  clientId: process.env.clientId,
 };

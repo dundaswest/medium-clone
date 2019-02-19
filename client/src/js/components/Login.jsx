@@ -67,7 +67,7 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(keys);
+    console.log('googlekey', keys);
     const { isLoggedIn, onClick } = this.props;
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
