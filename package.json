@@ -11,6 +11,8 @@
     "test": "jest",
     "test:update": "NODE_ENV=test jest -u",
     "dev": "webpack -d --watch --display-error-details --history-api-fallback",
+    "heroku-prebuild": "npm install ",
+    "heroku-postbuild": "webpack -p",
     "start": "nodemon server/index.js",
     "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\""
   },
