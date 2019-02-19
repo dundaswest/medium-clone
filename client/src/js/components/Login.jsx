@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
 import keys from '../../../../config/keys';
 
-const clientId = keys;
+const clientId = keys || process.env.API_KEY;
 
 const axios = require('axios');
 
