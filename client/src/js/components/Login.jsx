@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
 import keys from '../../../../config/keys';
 
-const { clientId } = keys;
+const clientId = keys;
 
 const axios = require('axios');
 
@@ -67,7 +67,7 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log(clientId);
+    console.log(keys);
     const { isLoggedIn, onClick } = this.props;
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
