@@ -16,7 +16,7 @@ const User = require('../db/auth');
 const Story = require('../db/story');
 
 mongoose
-  .connect(process.env.MONGOLAB_URI || 'mongodb://localhost/passport_local_mongoose_express4', {
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost/passport_local_mongoose_express4', {
     useNewUrlParser: true,
   })
   .then(() => {
