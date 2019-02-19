@@ -9,7 +9,7 @@ import Landing from './Landing';
 import Login from '../redux/containers/Login';
 import List from './List';
 import SignUp from './SignUp';
-import '../../../../public/css/main.css';
+
 import keys from '../../../../config/keys';
 
 console.log(keys);
