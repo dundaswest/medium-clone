@@ -15,13 +15,16 @@ const ObjectId = require('mongodb').ObjectID;
 const User = require('../db/auth');
 const Story = require('../db/story');
 
-mongoose.connect(
-  process.env.MONGOLAB_URI || 'mongodb://localhost/passport_local_mongoose_express4',
-  { useNewUrlParser: true },
-  (err, db) => {
-    console.log(err);
-  },
-);
+mongoose
+  .connect(process.env.MONGOLAB_URI || 'mongodb://localhost/passport_local_mongoose_express4', {
+    useNewUrlParser: true,
+  })
+  .then(() => {
+    console.log('Connected to Database');
+  })
+  .catch((err) => {
+    console.log('Not Connected to Database ERROR! ', err);
+  });
 
 const db = mongoose.connection;
 app.use(cors());
