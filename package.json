@@ -11,9 +11,7 @@
     "test:update": "NODE_ENV=test jest -u",
     "dev": "webpack -d --watch --display-error-details --history-api-fallback",
     "start": "nodemon server/index.js",
-    "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\"",
-    "heroku-prebuild": "npm install --only=dev",
-    "heroku-postbuild": "webpack -p"
+    "format": "prettier --list-different --single-quote --print-width=120 \"js/**/*.{js,jsx}\""
   },
   "jest": {
     "snapshotSerializers": [
