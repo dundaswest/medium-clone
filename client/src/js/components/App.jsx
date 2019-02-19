@@ -9,21 +9,18 @@ import Landing from './Landing';
 import Login from '../redux/containers/Login';
 import List from './List';
 import SignUp from './SignUp';
+import '../../../../public/css/main.css';
+import keys from '../../../../config/keys';
 
-const FourOhFour = () => (
-  <h1>
-404
-  </h1>
-);
+console.log(keys);
+const FourOhFour = () => <h1>404</h1>;
 
 const Public = () => (
   <h3>
     Piblic
     <ul>
       <li>
-        <Link to="login">
-Login
-        </Link>
+        <Link to="login">Login</Link>
       </li>
     </ul>
   </h3>
