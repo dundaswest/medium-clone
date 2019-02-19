@@ -18,6 +18,9 @@ const Story = require('../db/story');
 mongoose.connect(
   process.env.MONGOLAB_URI || 'mongodb://localhost/passport_local_mongoose_express4',
   { useNewUrlParser: true },
+  (err, db) => {
+    console.log(err);
+  },
 );
 
 const db = mongoose.connection;
