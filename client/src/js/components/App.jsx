@@ -11,6 +11,7 @@ import List from './List';
 import SignUp from './SignUp';
 
 import keys from '../../../../config/keys';
+import '../../styles/app.css';
 
 console.log(keys);
 const FourOhFour = () => <h1>404</h1>;
