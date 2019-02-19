@@ -2,7 +2,7 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
-import clientId from '../../config';
+import clientId from '../../../../config/keys';
 
 const axios = require('axios');
 
@@ -73,9 +73,7 @@ class Login extends React.Component {
     return (
       <div className="Login-Container">
         <div className="LoginGroup">
-          <div id="Login-title">
-ACCOUNT LOGIN
-          </div>
+          <div id="Login-title">ACCOUNT LOGIN</div>
           <div className="formGroup">
             <input type="text" id="name" placeholder="Your name" onChange={this.changeUserName} />
             <input
@@ -95,9 +93,7 @@ ACCOUNT LOGIN
             </button>
 
             <div className="SignInDiv">
-              <span id="msg">
-Don’t have an account?
-              </span>
+              <span id="msg">Don’t have an account?</span>
               <Link to="SignUp" className="sign-up">
                 Sign up
               </Link>
