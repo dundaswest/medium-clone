@@ -1,4 +1,423 @@
 body {
-  background-color: #99cc00;
+  font-family: "medium-content-sans-serif-font", "Roboto+Slab", "-apple-system",
+    "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Open Sans", "Helvetica Neue", "sans-serif" !important;
+}
+.header {
+  position: absolute;
+  width: 100%;
+  height: 65px;
   padding: 10px;
+  margin-bottom: 10px;
+  background: #fff;
+  color: rgba(0, 0, 0, 0.54);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+}
+.logoWapper {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.header-title {
+  float: left;
+  font-size: 30px;
+  color: #606470;
+}
+.mLogo {
+  line-height: 45px;
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+}
+.line {
+  height: 45px;
+  width: 10px;
+  float: left;
+}
+.header-title,
+.mLogo {
+  float: left;
+  background-color: "red";
+}
+.write {
+  margin-right: 10px;
+}
+.nav-bar {
+  float: right;
+  position: relative;
+  top: -40px;
+  margin-right: 100px;
+}
+.log-out,
+.write,
+.list {
+  float: right;
+  padding: 10px;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.54);
+}
+.log-out:hover,
+.write:hover,
+.list:hover {
+  border-bottom: 2px solid #1abb9c;
+}
+#edit-Img-section {
+  position: relative;
+  top: -55px;
+  padding: 20px;
+}
+.article-svg {
+  height: 35px;
+  width: 35px;
+  padding: 10px;
+  float: right;
+  display: inline-block;
+}
+.logoutImg,
+.writeImg,
+.readImg {
+  height: 1em;
+  top: 0.225em;
+  width: 15px;
+  margin-right: 5px;
+}
+.sign-in {
+  border: 2px solid #1abb9c;
+  border-radius: 16px;
+  padding: 7px;
+  font-size: 15px;
+  color: #1abb9c;
+  margin-left: 20px;
+  display: inline-block;
+
+  margin-top: 20px;
+  padding-left: 10px;
+}
+.SignInDiv {
+  float: left;
+  margin-top: 30px;
+}
+
+#name,
+#password,
+#submitBtn,
+#SignIn-submitBtn {
+  display: block;
+  text-align: left;
+  padding: 15px 5px;
+  margin: 0 0 20px;
+  width: 80%;
+  border-radius: 4px;
+  border: none;
+  background: rgba(0, 0, 0, 0.1);
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 100%;
+}
+.clear {
+  clear: both;
+}
+#msg {
+  color: rgba(0, 0, 0, 0.6);
+  float: left;
+  margin-right: 10px;
+}
+.Author {
+  position: relative;
+  top: 110px;
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  width: 680px;
+  margin: auto;
+}
+.authorPic {
+  float: right;
+  display: inline-block;
+  height: 120px;
+  width: 120px;
+  border-radius: 50px;
+}
+.authorPicSmall {
+  float: left;
+  display: inline-block;
+  height: 40px;
+  width: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 50px;
+}
+.authorNameSmall {
+  float: left;
+  padding-top: 12px;
+}
+.authorText {
+  float: left;
+}
+.authorName {
+  float: left;
+  margin-top: 15px;
+  margin-left: 10px;
+  color: rgba(0, 0, 0, 0.84);
+  font-size: 36px;
+  font-weight: 600;
+}
+.author-discription {
+  margin-left: 10px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.follow {
+  float: right;
+  border: 2px solid #1abb9c;
+  border-radius: 16px;
+  padding: 7px;
+  font-size: 15px;
+  color: #1abb9c;
+}
+.Article {
+  max-width: 1224px;
+  position: relative;
+  top: 100px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.ArticleTitle,
+.ArticleSubTitle {
+  color: #606470;
+  font-weight: 400;
+  font-size: 42px;
+  padding-top: 16px;
+  text-align: center;
+}
+.ArticleSubTitle {
+  font-weight: 400;
+  font-size: 28px;
+}
+.ArticleText {
+  font-size: 21px;
+  letter-spacing: -0.003em;
+}
+.sideBar {
+  margin-left: 30px;
+  margin-top: 100px;
+  position: fixed;
+}
+.TextDiv {
+  margin: 40px 200px;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+.footerDiv {
+  max-width: 1224px;
+  position: relative;
+  top: 100px;
+  padding: 50px;
+  padding-left: 200px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+
+  margin: 0 auto;
+}
+#clapNum {
+  height: 35px;
+  width: 35px;
+
+  margin-left: 10px;
+  color: rgba(0, 0, 0, 0.54);
+}
+#clap,
+#twitter {
+  height: 35px;
+  width: 35px;
+  border: 2px solid #ecf0f1;
+  border-radius: 50%;
+  padding: 10px;
+  color: #0092e3;
+}
+#bookmark,
+#facebook {
+  height: 35px;
+  width: 35px;
+  padding: 10px;
+}
+
+#footerTxt {
+  padding: 20px;
+  float: left;
+  display: inline-block;
+  margin-left: 25px !important;
+}
+#footerImg {
+  vertical-align: middle;
+  width: 152px;
+  height: 152px;
+  text-align: center;
+  border: 2px solid #ecf0f1;
+  border-radius: 50%;
+  float: left;
+}
+#written {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #606470;
+}
+#authorName-footer {
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 30px;
+}
+.followBtn {
+  border: 1px solid rgba(0, 0, 0, 0.84);
+  border-radius: 4px;
+  color: rgba(0, 0, 0, 0.84);
+  width: 60px;
+  padding: 0 16px;
+  margin-top: 10px;
+}
+.clear {
+  clear: both;
+}
+#title {
+  font-size: 42px;
+  font-weight: 400;
+  line-height: 1.25;
+  word-break: break-word;
+  resize: vertical;
+}
+#text {
+  display: block;
+  font-size: 21px;
+}
+#text,
+#title {
+  margin: 10px;
+  border: none;
+  resize: none;
+  width: 100%;
+  max-width: 740px;
+  border: solid 3px #1abb9c;
+}
+.titleSmall {
+  font-size: 34px;
+  font-weight: 600;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 20px;
+}
+#text:focus {
+  outline: none;
+}
+
+.textArea {
+  position: relative;
+  top: 110px;
+  display: block;
+  margin-top: 30px;
+  margin-left: 30%;
+  height: 100px;
+  border-radius: 20px;
+  outline: none;
+  padding: 10px;
+  height: 100px;
+}
+.Login-Container {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+.LoginGroup {
+  color: #2d2f36;
+  margin-top: 30px;
+  background: #f5f5f5;
+  border-radius: 4px;
+  margin: 100px auto 10px;
+  height: 468px;
+  width: 600px;
+  padding: 60px;
+  padding-bottom: 30px;
+}
+#Login-title {
+  padding: 4px 0;
+  font-size: 24px;
+  font-weight: 700;
+}
+.formGroup {
+  margin-top: 20px;
+  padding-top: 2px;
+  width: 566px;
+  color: white;
+}
+
+#writeSubmitBtn {
+  display: block;
+  background-color: #1abb9c;
+  color: white;
+  height: 30px;
+  cursor: pointer;
+  padding: 5px;
+  margin-left: 7px;
+  margin-top: 30px;
+  font-size: 1em;
+  border-radius: 20px;
+}
+#SignIn-submitBtn {
+  width: 462.8px;
+  text-align: center;
+  background-color: #1abb9c;
+}
+#submitBtn {
+  text-align: center;
+  width: 82%;
+  background-color: #1abb9c;
+}
+button[type="submit"]:hover {
+  background-color: #76b39d;
+}
+.googleBtn {
+  height: 50px;
+  width: 240px;
+  margin-top: 30px;
+  display: inline-block;
+  color: white;
+  background: #4285f4;
+  width: 190px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.ListName {
+  margin: auto 0;
+}
+.ListItemContainer {
+  position: relative;
+  top: 110px;
+  display: block;
+  margin: auto;
+  margin-top: 200px;
+}
+.ListItemHeader {
+  margin-bottom: 16px;
+}
+.ListItem {
+  margin: auto;
+  width: 680px;
+  height: 260px;
+  padding: 23px 0;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+.textSmall {
+  font-size: 18px;
+  padding-top: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px;
 }
