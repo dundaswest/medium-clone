@@ -2,7 +2,9 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
-import clientId from '../../../../config/keys';
+import keys from '../../../../config/keys';
+
+const { clientId } = keys;
 
 const axios = require('axios');
 
