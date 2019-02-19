@@ -3,9 +3,9 @@
   "env": {
     "test": {
       "plugins": ["transform-es2015-modules-commonjs"]
-    },
-    "sourceMaps": true
+    }
   },
+  "sourceMaps": true,
   "plugins": [
     "transform-object-rest-spread",
     "@babel/plugin-proposal-class-properties"
