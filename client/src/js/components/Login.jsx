@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
 import keys from '../../../../config/keys';
 
-const clientId = keys || process.env.API_KEY;
+// const clientId = keys || process.env.API_KEY;
 
 const axios = require('axios');
 
@@ -20,7 +20,6 @@ class Login extends React.Component {
 
   componentDidMount() {
     if (process.env.NODE_ENV === 'production') {
-      console.log('produc');
       axios
         .get('/getGoogleid')
         .then((res) => {
@@ -82,7 +81,8 @@ class Login extends React.Component {
 
   render() {
     const { isLoggedIn, onClick } = this.props;
-    const { clientId } = this.state;
+    // eslint-disable-next-line react/destructuring-assignment
+    const clientId = this.state.clientId || keys;
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
     }
