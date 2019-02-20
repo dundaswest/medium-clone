@@ -18,8 +18,8 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    if(process.env.NODE_ENV === 'production' {
-      console.log('produc')
+    if (process.env.NODE_ENV === 'production') {
+      console.log('produc');
     }
     axios
       .get('/getGoogleid')
