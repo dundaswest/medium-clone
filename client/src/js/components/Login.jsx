@@ -17,6 +17,18 @@ class Login extends React.Component {
     };
   }
 
+  componentDidMount() {
+    if(process.env.NODE_ENV === 'production' {
+      console.log('produc')
+    }
+    axios
+      .get('/getGoogleid')
+      .then((res) => {
+        console.log(res);
+      })
+      .catch(err => console.log(err));
+  }
+
   changeUserName = (event) => {
     this.setState({ username: event.target.value });
   };

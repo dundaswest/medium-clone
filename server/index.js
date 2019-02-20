@@ -45,7 +45,9 @@ app.use((req, res, next) => {
   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
-
+app.get('/getGoogleId', (req, res) => {
+  res.send(process.env.API_KEY);
+});
 app.get('/getList', (req, res) => {
   console.log('getting list');
 
