@@ -83,7 +83,7 @@ class Login extends React.Component {
     const { isLoggedIn, onClick } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
     const clientId = this.state.clientId || keys;
-    console.log(' clientId', clientId);
+
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
     }
@@ -119,7 +119,7 @@ class Login extends React.Component {
             <div className="clear" />
             <GoogleLogin
               className="googleBtn"
-              clientId={`${clientId}`}
+              clientId={clientId}
               buttonText="Sign in with Google"
               onSuccess={onClick}
               onFailure={() => console.log('failed')}
