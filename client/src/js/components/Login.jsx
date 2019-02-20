@@ -14,19 +14,21 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
+      clientId: '',
     };
   }
 
   componentDidMount() {
     if (process.env.NODE_ENV === 'production') {
       console.log('produc');
+      axios
+        .get('/getGoogleid')
+        .then((res) => {
+          console.log(res);
+          this.setState({ clientId: res.data });
+        })
+        .catch(err => console.log(err));
     }
-    axios
-      .get('/getGoogleid')
-      .then((res) => {
-        console.log(res);
-      })
-      .catch(err => console.log(err));
   }
 
   changeUserName = (event) => {
@@ -79,8 +81,8 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log('googlekey', keys);
     const { isLoggedIn, onClick } = this.props;
+    const { clientId } = this.state;
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
     }
