@@ -18,14 +18,10 @@ const ListItem = (props) => {
       >
         <div className="ListItemHeader">
           <img src={author} alt="small Author Name" className="authorPicSmall" />
-          <div className="authorNameSmall">
-Chandler Bing
-          </div>
+          <div className="authorNameSmall">Chandler Bing</div>
           <div className="clear" />
         </div>
-        <div className="titleSmall">
-          {item.title}
-        </div>
+        <div className="titleSmall">{item.title}</div>
         <div className="textSmall">
           {' '}
           {item.title.length > 90

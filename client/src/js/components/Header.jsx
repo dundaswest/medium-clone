@@ -16,9 +16,7 @@ const Header = (props) => {
           <svg className="line">
             <path d="M1 29V1" stroke="#D5D5D5" strokeWidth=".5" fill="none" strokeLinecap="round" />
           </svg>
-          <div className="header-title">
-Stories
-          </div>
+          <div className="header-title">Stories</div>
           <div className="clear" />
         </div>
       </Link>

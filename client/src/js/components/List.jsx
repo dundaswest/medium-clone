@@ -1,6 +1,6 @@
 import React from 'react';
 import Author from './Author';
-import Header from './Header';
+import Header from '../redux/containers/Logout';
 import ListItem from './ListItem';
 
 const axios = require('axios');

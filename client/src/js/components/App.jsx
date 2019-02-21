@@ -2,6 +2,7 @@ import React from 'react';
 import {
   BrowserRouter, Route, Switch, Link,
 } from 'react-router-dom';
+import Public from './Public';
 
 import WriteForm from './Write';
 import EditForm from './Edit';
@@ -13,17 +14,6 @@ import SignUp from './SignUp';
 import '../../styles/app.css';
 
 const FourOhFour = () => <h1>404</h1>;
-
-const Public = () => (
-  <h3>
-    Piblic
-    <ul>
-      <li>
-        <Link to="login">Login</Link>
-      </li>
-    </ul>
-  </h3>
-);
 
 const App = () => (
   <BrowserRouter>
