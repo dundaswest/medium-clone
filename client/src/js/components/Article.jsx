@@ -47,17 +47,11 @@ class Article extends React.Component {
     } = this.state;
     return (
       <div className="Article">
-        <div className="ArticleTitle">
-          {title}
-        </div>
-        <div className="ArticleSubTitle">
-          {subtitle}
-        </div>
+        <div className="ArticleTitle">{title}</div>
+        <div className="ArticleSubTitle">{subtitle}</div>
         {text ? (
           <div className="TextDiv">
-            <div className="ArticleText">
-              {text}
-            </div>
+            <div className="ArticleText">{text}</div>
           </div>
         ) : (
           <Text />

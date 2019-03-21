@@ -5,8 +5,8 @@ import cover2 from '../imgs/book2.jpg';
 import cover3 from '../imgs/cover.jpg';
 
 const Public = () => (
-  <div>
-    <div id="publicContainer">
+  <div id="publicContainer">
+    <div id="public-header-container">
       <div id="public-header">Medium</div>
       <h2 id="public-title">YOU MUST LOGIN FIRST</h2>
       <Link to="login">
