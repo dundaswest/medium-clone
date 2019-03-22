@@ -21,19 +21,20 @@ const Header = (props) => {
         </div>
       </Link>
       <div className="nav-bar">
-        <Link to="login" className="log-out" onClick={onClick}>
-          <img src={logoutImg} alt="Medium logout" className="logoutImg" />
-          Logout
+        <Link to="login" className="nav-item" onClick={onClick}>
+          <span id="test">
+            <img src={logoutImg} alt="Medium logout" className="header-icon" />
+          </span>
+          <span>Logout</span>
         </Link>
-        <Link to="write" className="write">
-          <img src={writeImg} alt="Medium write" className="writeImg" />
-          write
+        <Link to="write" className="nav-item">
+          <img src={writeImg} alt="Medium write" className="header-icon" />
+          <span>write</span>
         </Link>
-        <Link to="list" className="list">
-          <img src={readImg} alt="Medium read" className="readImg" />
-          Your stories
+        <Link to="list" className="nav-item">
+          <img src={readImg} alt="Medium read" className="header-icon" />
+          <span> Your stories</span>
         </Link>
-        <div className="clear" />
       </div>
     </div>
   );

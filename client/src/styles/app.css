@@ -16,6 +16,7 @@ ul {
   margin: 0;
   padding: 0;
 }
+/*Header Component ---------------*/
 
 .header {
   position: absolute;
@@ -27,6 +28,53 @@ ul {
   color: rgba(0, 0, 0, 0.54);
   box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
 }
+
+.logoWapper {
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.mLogo {
+  line-height: 45px;
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+}
+.line {
+  height: 45px;
+  width: 10px;
+  float: left;
+}
+.header-title,
+.mLogo {
+  float: left;
+}
+.header-title {
+  float: left;
+  font-size: 30px;
+  color: #606470;
+}
+.nav-bar {
+  float: right;
+  position: relative;
+  top: -40px;
+  margin-right: 100px;
+}
+.header-icon {
+  height: 1em;
+  top: 0.225em;
+  width: 15px;
+  margin-right: 5px;
+}
+.nav-item {
+  padding: 10px;
+  font-size: 17px;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+/*------------------*/
 #publicContainer {
   display: flex;
   flex-direction: column;
@@ -96,51 +144,11 @@ ul {
   top: 40px;
   text-align: center;
 }
-.logoWapper {
-  padding-left: 20px !important;
-  padding-right: 20px !important;
-  margin-left: 100px;
-  margin-top: 20px;
-  font-size: 16px;
-}
-.header-title {
-  float: left;
-  font-size: 30px;
-  color: #606470;
-}
-.mLogo {
-  line-height: 45px;
-  height: 35px;
-  width: 35px;
-  margin-right: 10px;
-}
-.line {
-  height: 45px;
-  width: 10px;
-  float: left;
-}
-.header-title,
-.mLogo {
-  float: left;
-  background-color: "red";
-}
+
 .write {
   margin-right: 10px;
 }
-.nav-bar {
-  float: right;
-  position: relative;
-  top: -40px;
-  margin-right: 100px;
-}
-.log-out,
-.write,
-.list {
-  float: right;
-  padding: 10px;
-  font-size: 17px;
-  color: rgba(0, 0, 0, 0.54);
-}
+
 .log-out:hover,
 .write:hover,
 .list:hover {
@@ -158,14 +166,7 @@ ul {
   float: right;
   display: inline-block;
 }
-.logoutImg,
-.writeImg,
-.readImg {
-  height: 1em;
-  top: 0.225em;
-  width: 15px;
-  margin-right: 5px;
-}
+
 .sign-in {
   border: 2px solid #1abb9c;
   border-radius: 16px;
@@ -263,8 +264,9 @@ ul {
   max-width: 1224px;
   position: relative;
   top: 100px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 20px 40px;
+  min-width: 800px;
 }
 .ArticleTitle,
 .ArticleSubTitle {
@@ -502,4 +504,11 @@ button[type="submit"]:hover {
   padding-left: 20px;
   padding-right: 20px;
   margin-bottom: 10px;
+}
+.nav-bar {
+  display: flex;
+  flex-direction: row-reverse;
+}
+#test {
+  height: 1em;
 }
