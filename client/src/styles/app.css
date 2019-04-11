@@ -74,7 +74,110 @@ ul {
   color: rgba(0, 0, 0, 0.54);
 }
 
-/*------------------*/
+/* Sidebar component ------------------*/
+
+.sideBar {
+  margin: 100px 30px;
+  position: fixed;
+}
+#clapNum {
+  height: 35px;
+  width: 35px;
+  margin-left: 18px;
+  color: rgba(0, 0, 0, 0.54);
+}
+#clap,
+#twitter {
+  border: 2px solid #ecf0f1;
+  border-radius: 50%;
+}
+.sidebar-icon {
+  height: 35px;
+  width: 35px;
+  padding: 10px;
+}
+
+/* Article TODO-----------------------*/
+.Article {
+  max-width: 1224px;
+  position: relative;
+  top: 100px;
+  margin: 20px auto;
+  padding: 20px 40px;
+  min-width: 800px;
+}
+.ArticleTitle,
+.ArticleSubTitle {
+  color: #606470;
+  font-weight: 400;
+  font-size: 42px;
+  padding-top: 16px;
+  text-align: center;
+}
+.ArticleSubTitle {
+  font-weight: 400;
+  font-size: 28px;
+}
+.ArticleText {
+  font-size: 21px;
+  letter-spacing: -0.003em;
+}
+
+.TextDiv {
+  margin: 40px 200px;
+  letter-spacing: 3px;
+  line-height: 1.5;
+}
+#edit-Img-section {
+  position: relative;
+  top: -55px;
+  padding: 20px;
+}
+.article-svg {
+  height: 35px;
+  width: 35px;
+  padding: 10px;
+  float: right;
+  display: inline-block;
+}
+/* Footer component -----------------------*/
+
+#footerDiv {
+  max-width: 1224px;
+  position: relative;
+  top: 100px;
+  padding: 50px;
+  padding-left: 200px;
+  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
+  margin: 0 auto;
+}
+
+#footerTxt {
+  padding: 20px;
+  float: left;
+  display: inline-block;
+  margin-left: 25px !important;
+}
+#footerImg {
+  vertical-align: middle;
+  width: 152px;
+  height: 152px;
+  text-align: center;
+  border: 2px solid #ecf0f1;
+  border-radius: 50%;
+  float: left;
+}
+#written {
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #606470;
+}
+#authorName-footer {
+  padding-bottom: 10px;
+  font-weight: 600;
+  font-size: 30px;
+}
+/*--------------------*/
 #publicContainer {
   display: flex;
   flex-direction: column;
@@ -153,18 +256,6 @@ ul {
 .write:hover,
 .list:hover {
   border-bottom: 2px solid #1abb9c;
-}
-#edit-Img-section {
-  position: relative;
-  top: -55px;
-  padding: 20px;
-}
-.article-svg {
-  height: 35px;
-  width: 35px;
-  padding: 10px;
-  float: right;
-  display: inline-block;
 }
 
 .sign-in {
@@ -260,96 +351,7 @@ ul {
   font-size: 15px;
   color: #1abb9c;
 }
-.Article {
-  max-width: 1224px;
-  position: relative;
-  top: 100px;
-  margin: 20px auto;
-  padding: 20px 40px;
-  min-width: 800px;
-}
-.ArticleTitle,
-.ArticleSubTitle {
-  color: #606470;
-  font-weight: 400;
-  font-size: 42px;
-  padding-top: 16px;
-  text-align: center;
-}
-.ArticleSubTitle {
-  font-weight: 400;
-  font-size: 28px;
-}
-.ArticleText {
-  font-size: 21px;
-  letter-spacing: -0.003em;
-}
-.sideBar {
-  margin: 100px 30px;
 
-  position: fixed;
-}
-.TextDiv {
-  margin: 40px 200px;
-  letter-spacing: 3px;
-  line-height: 1.5;
-}
-.footerDiv {
-  max-width: 1224px;
-  position: relative;
-  top: 100px;
-  padding: 50px;
-  padding-left: 200px;
-  border-top: 1px solid rgba(0, 0, 0, 0.05) !important;
-  margin: 0 auto;
-}
-#clapNum {
-  height: 35px;
-  width: 35px;
-  margin-left: 18px;
-  color: rgba(0, 0, 0, 0.54);
-}
-#clap,
-#twitter {
-  height: 35px;
-  width: 35px;
-  border: 2px solid #ecf0f1;
-  border-radius: 50%;
-  padding: 10px;
-  color: #0092e3;
-}
-#bookmark,
-#facebook {
-  height: 35px;
-  width: 35px;
-  padding: 10px;
-}
-
-#footerTxt {
-  padding: 20px;
-  float: left;
-  display: inline-block;
-  margin-left: 25px !important;
-}
-#footerImg {
-  vertical-align: middle;
-  width: 152px;
-  height: 152px;
-  text-align: center;
-  border: 2px solid #ecf0f1;
-  border-radius: 50%;
-  float: left;
-}
-#written {
-  margin-bottom: 10px;
-  font-size: 16px;
-  color: #606470;
-}
-#authorName-footer {
-  padding-bottom: 10px;
-  font-weight: 600;
-  font-size: 30px;
-}
 .followBtn {
   border: 1px solid rgba(0, 0, 0, 0.84);
   border-radius: 4px;

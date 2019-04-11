@@ -46,7 +46,7 @@ app.use((req, res, next) => {
   next();
 });
 app.get('/getGoogleId', (req, res) => {
-  res.send(process.env.API_KEY);
+  res.send(process.env.clientId);
 });
 app.get('/getList', (req, res) => {
   console.log('getting list');

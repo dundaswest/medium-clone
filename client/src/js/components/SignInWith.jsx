@@ -15,6 +15,7 @@ const SignInWith = (props) => {
       provider_pic: res.w3.Paa,
     };
     console.log(postData);
+
     // build our user data
     SignInUser(postData);
     toggleClose();
@@ -36,9 +37,7 @@ const SignInWith = (props) => {
           <span className="glyphicon glyphicon-remove" />
         </button>
         <nav>
-          <h2 className="grayed-heading center">
-Sign In
-          </h2>
+          <h2 className="grayed-heading center">Sign In</h2>
           <ul className="omniauth-button-group">
             <li className="omniauth-button google">
               <GoogleLogin
@@ -48,10 +47,7 @@ Sign In
                 onFailure={responseGoogle}
               >
                 <i className="fa fa-google" />
-                <span>
-                  {' '}
-SignIn with Google
-                </span>
+                <span> SignIn with Google</span>
               </GoogleLogin>
             </li>
           </ul>

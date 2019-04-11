@@ -14,7 +14,7 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      clientId: '',
+      clientId: keys,
     };
   }
 
@@ -28,6 +28,7 @@ class Login extends React.Component {
         })
         .catch(err => console.log(err));
     }
+    console.log('CLIENT ID', this.state.clientId);
   }
 
   changeUserName = (event) => {
@@ -36,6 +37,10 @@ class Login extends React.Component {
 
   changePassword = (event) => {
     this.setState({ password: event.target.value });
+  };
+
+  responseGoogle = (response) => {
+    console.log(response);
   };
 
   handleSubmit = () => {
@@ -122,7 +127,8 @@ class Login extends React.Component {
               clientId={clientId}
               buttonText="Sign in with Google"
               onSuccess={onClick}
-              onFailure={() => console.log('failed')}
+              onFailure={this.responseGoogle}
+              cookiePolicy="single_host_origin"
             />
             <div className="clear" />
           </div>

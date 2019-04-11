@@ -8,19 +8,17 @@ import facebook from '../imgs/facebook.svg';
 const Sidebar = ({ clapNum, onClick }) => (
   <div className="sideBar">
     <div>
-      <div id="clapNum">
-        {clapNum}
-      </div>
-      <img src={clap} alt="clapPic" id="clap" onClick={onClick} />
+      <div id="clapNum">{clapNum}</div>
+      <img src={clap} alt="clapPic" className="sidebar-icon" id="clap" onClick={onClick} />
     </div>
     <div>
-      <img src={twitter} alt="twitterPic" id="twitter" />
+      <img src={twitter} alt="twitterPic" className="sidebar-icon" id="twitter" />
     </div>
     <div>
-      <img src={bookmark} alt="bookmarkPic" id="bookmark" />
+      <img src={bookmark} alt="bookmarkPic" className="sidebar-icon" />
     </div>
     <div>
-      <img src={facebook} alt="facebookPic" id="facebook" />
+      <img src={facebook} alt="facebookPic" className="sidebar-icon" />
     </div>
   </div>
 );
