@@ -23,7 +23,7 @@ class Login extends React.Component {
       axios
         .get('/getGoogleid')
         .then((res) => {
-          console.log(res);
+          console.log(res.data.data);
           this.setState({ clientId: res.data.data });
         })
         .catch(err => console.log(err));
