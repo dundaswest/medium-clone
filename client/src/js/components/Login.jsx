@@ -3,8 +3,6 @@ import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
 
-// const clientId = keys || process.env.API_KEY;
-
 const axios = require('axios');
 
 class Login extends React.Component {
