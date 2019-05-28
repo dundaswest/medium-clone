@@ -21,6 +21,7 @@ class Login extends React.Component {
   componentDidMount() {
     // console.log('I am key', this.state.clientId, process.env.NODE_ENV);
     if (process.env.NODE_ENV === 'production') {
+      console.log('PROCESS', process.env.clientId);
       axios
         .get('/getGoogleid')
         .then((res) => {
