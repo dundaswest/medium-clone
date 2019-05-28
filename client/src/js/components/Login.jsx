@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
+import keys from '../../../../config/keys';
 
 // const clientId = keys || process.env.API_KEY;
 
@@ -17,17 +18,17 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    // console.log('I am key', this.state.clientId, process.env.NODE_ENV);
-    if (process.env.NODE_ENV === 'production') {
-      console.log('PROCESS', process.env.clientId);
-      axios
-        .get('/getGoogleid')
-        .then((res) => {
-          console.log(res);
-          //   this.setState({ clientId: res.data });
-        })
-        .catch(err => console.log(err));
-    }
+    console.log('I am key', keys);
+    // if (process.env.NODE_ENV === 'production') {
+    console.log('PROCESS', process.env.clientId);
+    axios
+      .get('/getGoogleid')
+      .then((res) => {
+        console.log(res);
+        //   this.setState({ clientId: res.data });
+      })
+      .catch(err => console.log(err));
+    // }
   }
 
   changeUserName = (event) => {
@@ -121,7 +122,7 @@ class Login extends React.Component {
             <div className="clear" />
             <GoogleLogin
               className="googleBtn"
-              clientId={process.env.clientId}
+              clientId="292354040290-r2r66go83geg9jlba4t9po3svvqrf954.apps.googleusercontent.com"
               buttonText="Sign in with Google"
               onSuccess={onClick}
               onFailure={this.responseGoogle}
