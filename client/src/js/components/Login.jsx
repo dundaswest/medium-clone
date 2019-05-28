@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
-import keys from '../../../../config/keys';
 
 // const clientId = keys || process.env.API_KEY;
 
@@ -14,7 +13,6 @@ class Login extends React.Component {
     this.state = {
       username: '',
       password: '',
-      clientId: keys,
     };
   }
 
@@ -25,12 +23,11 @@ class Login extends React.Component {
       axios
         .get('/getGoogleid')
         .then((res) => {
-          console.log(res.data.data);
+          console.log(res);
           //   this.setState({ clientId: res.data });
         })
         .catch(err => console.log(err));
     }
-    console.log('CLIENT ID', this.state.clientId);
   }
 
   changeUserName = (event) => {
@@ -89,8 +86,6 @@ class Login extends React.Component {
   render() {
     const { isLoggedIn, onClick } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
-    const clientId = this.state.clientId || keys;
-    console.log('I am key', clientId);
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
     }
@@ -126,7 +121,7 @@ class Login extends React.Component {
             <div className="clear" />
             <GoogleLogin
               className="googleBtn"
-              clientId={clientId}
+              clientId={process.env.clientId}
               buttonText="Sign in with Google"
               onSuccess={onClick}
               onFailure={this.responseGoogle}
