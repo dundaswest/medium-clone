@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const srcFolder = path.join(__dirname, '/client/src/');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -67,7 +68,7 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
-    new HtmlWebpackPlugin.DefinePlugin({
+    new webpack.DefinePlugin({
       'process.env': {
         clientId: process.env.clientId,
       },
