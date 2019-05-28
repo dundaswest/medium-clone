@@ -19,7 +19,7 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    console.log('I am key', this.state.clientId, process.env.NODE_ENV);
+    // console.log('I am key', this.state.clientId, process.env.NODE_ENV);
     if (process.env.NODE_ENV === 'production') {
       axios
         .get('/getGoogleid')
@@ -89,7 +89,7 @@ class Login extends React.Component {
     const { isLoggedIn, onClick } = this.props;
     // eslint-disable-next-line react/destructuring-assignment
     const clientId = this.state.clientId || keys;
-
+    console.log('I am key', clientId);
     if (isLoggedIn) {
       return <Redirect to="/landing" />;
     }
