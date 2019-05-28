@@ -3,7 +3,8 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const srcFolder = path.join(__dirname, '/client/src/');
-const webpack = require('webpack');
+
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
   entry: {
@@ -19,6 +20,9 @@ module.exports = {
     publicPath: '/',
 
     historyApiFallback: true,
+  },
+  optimization: {
+    minimizer: [new UglifyJsPlugin()],
   },
   stats: {
     reasons: true,
