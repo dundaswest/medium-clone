@@ -3,7 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 const srcFolder = path.join(__dirname, '/client/src/');
-
+const webpack = require('webpack');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
@@ -72,5 +72,13 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('production'),
+      },
+    }),
+    new webpack.optimize.DedupePlugin(), // dedupe similar code
+    new webpack.optimize.UglifyJsPlugin(), // minify everything
+    new webpack.optimize.AggressiveMergingPlugin(), // Merge chunks
   ],
 };
