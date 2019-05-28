@@ -67,5 +67,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: '[name].css',
     }),
+    new HtmlWebpackPlugin.DefinePlugin({
+      'process.env': {
+        clientId: process.env.clientId,
+      },
+    }),
   ],
 };

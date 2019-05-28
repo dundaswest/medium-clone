@@ -1,3 +1,5 @@
-module.exports = {
-  clientId: process.env.clientId,
+const { clientId } = process.env;
+const keys = {
+  clientId,
 };
+export default keys;
