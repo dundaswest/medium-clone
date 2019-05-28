@@ -24,7 +24,7 @@ class Login extends React.Component {
         .get('/getGoogleid')
         .then((res) => {
           console.log(res);
-          this.setState({ clientId: res.data });
+          this.setState({ clientId: res.data.data });
         })
         .catch(err => console.log(err));
     }
