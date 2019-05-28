@@ -2,7 +2,6 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
-import keys from '../../../../config/keys';
 
 // const clientId = keys || process.env.API_KEY;
 
@@ -18,14 +17,10 @@ class Login extends React.Component {
   }
 
   componentDidMount() {
-    console.log('I am key', keys);
-    // if (process.env.NODE_ENV === 'production') {
-    console.log('PROCESS', process.env.clientId);
     axios
       .get('/getGoogleid')
       .then((res) => {
         console.log(res);
-        //   this.setState({ clientId: res.data });
       })
       .catch(err => console.log(err));
     // }
