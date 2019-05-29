@@ -53,6 +53,7 @@ app.get('/getList', (req, res) => {
 
   db.collection('story')
     .find()
+    .sort({ _id: -1 })
     .toArray((err, list) => {
       if (err) {
         console.log(err);
