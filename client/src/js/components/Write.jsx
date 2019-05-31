@@ -1,7 +1,6 @@
 import React from 'react';
+import axios from 'axios';
 import Header from './Header';
-
-const axios = require('axios');
 
 class WriteForm extends React.Component {
   constructor(props) {

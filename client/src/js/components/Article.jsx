@@ -1,11 +1,11 @@
 /* eslint-disable no-underscore-dangle */
 import React from 'react';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
 import Text from './Text';
 import edit from '../imgs/edit.svg';
 import binImg from '../imgs/binImg.svg';
 
-const axios = require('axios');
 
 class Article extends React.Component {
   state = {

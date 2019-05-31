@@ -1,8 +1,7 @@
 import React from 'react';
 
 import { Redirect } from 'react-router-dom';
-
-const axios = require('axios');
+import axios from 'axios';
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -49,9 +48,7 @@ class SignUp extends React.Component {
     }
     return (
       <div className="LoginGroup">
-        <div id="Login-title">
-SIGN UP
-        </div>
+        <div id="Login-title">SIGN UP</div>
         <div className="formGroup">
           <input
             type="text"

@@ -2,8 +2,7 @@ import React from 'react';
 import { Redirect, Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { GoogleLogin } from 'react-google-login';
-
-const axios = require('axios');
+import axios from 'axios';
 
 class Login extends React.Component {
   constructor(props) {

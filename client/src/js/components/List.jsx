@@ -1,9 +1,8 @@
 import React from 'react';
+import axios from 'axios';
 import Author from './Author';
 import Header from '../redux/containers/Logout';
 import ListItem from './ListItem';
-
-const axios = require('axios');
 
 class List extends React.Component {
   state = { data: [] };

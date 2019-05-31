@@ -1,9 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Link, Redirect } from 'react-router-dom';
+import axios from 'axios';
 import Header from './Header';
-
-const axios = require('axios');
 
 class EditForm extends React.Component {
   constructor(props) {
